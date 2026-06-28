@@ -8,7 +8,6 @@ function getLocale(request: NextRequest) {
   const acceptLanguage = request.headers.get('accept-language')
   if (!acceptLanguage) return defaultLocale
 
-  // Simple language matching logic
   if (acceptLanguage.includes('en')) {
     return 'en'
   }
@@ -33,7 +32,7 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Skip all internal paths (_next) and static files
-    '/((?!api|_next/static|_next/image|favicon.ico|images|backup_original).*)',
+    // Skip all internal paths (_next), API routes, and static files with extensions (e.g., .png, .jpg, .ico)
+    '/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)',
   ],
 }
