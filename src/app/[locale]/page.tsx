@@ -33,10 +33,6 @@ export default async function Page({ params }: Props) {
               src="/images/hero.jpg" 
               alt="Global food distribution" 
               className="w-full h-full object-cover opacity-25"
-              onError={(e) => {
-                // Fallback image
-                (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=1200';
-              }}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-[#0B2046]/80 via-[#0B2046]/95 to-[#0B2046]"></div>
           </div>
@@ -102,9 +98,6 @@ export default async function Page({ params }: Props) {
                     src="/images/illust.png" 
                     alt="Mission Illustration" 
                     className="w-full h-auto object-cover"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600';
-                    }}
                   />
                 </div>
               </div>
@@ -165,9 +158,6 @@ export default async function Page({ params }: Props) {
                   src="/images/service.jpg" 
                   alt="Why Choose Us" 
                   className="w-full h-auto object-cover"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=600';
-                  }}
                 />
               </div>
 
