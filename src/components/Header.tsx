@@ -40,7 +40,7 @@ export default function Header({ dict, locale }: Props) {
           <img 
             src="/images/logo.png" 
             alt={locale === 'ja' ? '合同会社JCSギバ' : 'JCS Giba LLC'} 
-            className="h-10 w-auto object-contain"
+            className="h-12 lg:h-16 w-auto object-contain"
           />
         </Link>
 
