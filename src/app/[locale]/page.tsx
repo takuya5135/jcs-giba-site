@@ -30,7 +30,7 @@ export default async function Page({ params }: Props) {
           {/* 背景画像 */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="/images/hero.png" 
+              src="/images/TOP.png" 
               alt="Global food distribution" 
               className="w-full h-full object-cover"
             />
