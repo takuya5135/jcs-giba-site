@@ -18,7 +18,7 @@ export default function ProfileSection({ dict, locale }: Props) {
           <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
             <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-2xl overflow-hidden shadow-md border border-slate-100 mb-6 bg-slate-200">
               <img 
-                src="/images/profile.jpg" 
+                src="/images/hero.png" 
                 alt={dict.profile.name} 
                 className="w-full h-full object-cover"
               />
