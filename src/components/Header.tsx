@@ -36,11 +36,12 @@ export default function Header({ dict, locale }: Props) {
     <header className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
         {/* ロゴ */}
-        <Link href={`/${locale}`} className="flex flex-col">
-          <span className="text-xl font-bold tracking-wider text-[#0B2046] leading-none">JCS Giba</span>
-          <span className="text-[10px] text-gray-500 mt-1 font-medium">
-            {locale === 'ja' ? '合同会社JCSギバ' : 'JCS Giba LLC'}
-          </span>
+        <Link href={`/${locale}`} className="flex items-center">
+          <img 
+            src="/images/logo.png" 
+            alt={locale === 'ja' ? '合同会社JCSギバ' : 'JCS Giba LLC'} 
+            className="h-10 w-auto object-contain"
+          />
         </Link>
 
         {/* PC用ナビゲーション */}
