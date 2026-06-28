@@ -26,8 +26,19 @@ export default async function Page({ params }: Props) {
       <main className="pt-20">
         
         {/* --- Hero Section --- */}
-        <section className="min-h-[80vh] flex items-center justify-center bg-white border-b border-slate-100">
-          <div className="max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32 text-center">
+        <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-white border-b border-slate-100">
+          {/* 背景画像 */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src="/images/hero.png" 
+              alt="Global food distribution" 
+              className="w-full h-full object-cover"
+            />
+            {/* 白の半透明オーバーレイで爽やかさを保ちつつ、文字を読みやすくする */}
+            <div className="absolute inset-0 bg-white/85 backdrop-blur-[1px]"></div>
+          </div>
+
+          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32 text-center">
             <span className="inline-block text-xs md:text-sm font-bold tracking-widest text-[#F09A26] uppercase mb-6 px-4 py-1.5 rounded-full bg-[#F09A26]/5 border border-[#F09A26]/10">
               {dict.hero.tag}
             </span>
