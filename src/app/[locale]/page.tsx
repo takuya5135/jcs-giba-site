@@ -26,33 +26,23 @@ export default async function Page({ params }: Props) {
       <main className="pt-20">
         
         {/* --- Hero Section --- */}
-        <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#0B2046]">
-          {/* 背景画像とオーバーレイ */}
-          <div className="absolute inset-0 z-0">
-            <img 
-              src="/images/hero.jpg" 
-              alt="Global food distribution" 
-              className="w-full h-full object-cover opacity-25"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0B2046]/80 via-[#0B2046]/95 to-[#0B2046]"></div>
-          </div>
-
-          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 text-center">
-            <span className="inline-block text-xs md:text-sm font-bold tracking-widest text-[#F09A26] uppercase mb-4 md:mb-6 px-4 py-1.5 rounded-full bg-white/5 border border-white/10">
+        <section className="min-h-[80vh] flex items-center justify-center bg-white border-b border-slate-100">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32 text-center">
+            <span className="inline-block text-xs md:text-sm font-bold tracking-widest text-[#F09A26] uppercase mb-6 px-4 py-1.5 rounded-full bg-[#F09A26]/5 border border-[#F09A26]/10">
               {dict.hero.tag}
             </span>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight mb-6 md:mb-8 max-w-4xl mx-auto">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#0B2046] leading-tight tracking-wide mb-8 max-w-4xl mx-auto">
               {dict.hero.title1}<br />
               <span className="text-[#F09A26]">{dict.hero.title2}</span>
               {dict.hero.title3}
             </h1>
-            <p className="text-xs md:text-sm lg:text-base text-gray-300 max-w-2xl mx-auto leading-loose mb-10 md:mb-12 px-2">
+            <p className="text-xs md:text-sm lg:text-base text-gray-500 max-w-2xl mx-auto leading-loose mb-12 px-2">
               {dict.hero.desc}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-sm sm:max-w-none mx-auto w-full">
               <a 
                 href="#services" 
-                className="w-full sm:w-auto bg-[#F09A26] hover:bg-[#d6851f] text-white px-10 py-4 rounded-full font-bold shadow-md hover:shadow-lg transition-all duration-300 text-xs md:text-sm"
+                className="w-full sm:w-auto bg-[#F09A26] hover:bg-[#d6851f] text-white px-10 py-4 rounded-full font-bold shadow-sm hover:shadow-md transition-all duration-300 text-xs md:text-sm tracking-wider"
               >
                 {dict.hero.btnServices}
               </a>
@@ -60,7 +50,7 @@ export default async function Page({ params }: Props) {
                 href={locale === 'ja'
                   ? "mailto:takuya.hata@jcs-giba.com?subject=お問い合わせ"
                   : "mailto:takuya.hata@jcs-giba.com?subject=Inquiry"}
-                className="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0B2046] px-10 py-3.5 rounded-full font-bold transition-all duration-300 text-xs md:text-sm"
+                className="w-full sm:w-auto bg-white border-2 border-[#0B2046] text-[#0B2046] hover:bg-slate-50 px-10 py-3.5 rounded-full font-bold transition-all duration-300 text-xs md:text-sm tracking-wider"
               >
                 {dict.hero.btnContact}
               </a>
@@ -69,38 +59,23 @@ export default async function Page({ params }: Props) {
         </section>
 
         {/* --- Mission Section --- */}
-        <section id="mission" className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-7 space-y-6">
-                <span className="text-xs font-bold uppercase tracking-widest text-[#F09A26]">
-                  {dict.mission.tag}
-                </span>
-                <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B2046] leading-tight">
-                  {dict.mission.title.split('\n')[0]}<br />
-                  <span className="text-gradient">{dict.mission.title.split('\n')[1]}</span>
-                </h2>
-                <div className="h-1 w-12 bg-[#F09A26] rounded"></div>
-                
-                <blockquote className="border-l-4 border-[#F09A26] pl-4 italic text-sm md:text-base text-gray-600 font-medium my-6 leading-relaxed">
-                  &ldquo;{dict.mission.quote}&rdquo;
-                </blockquote>
-                <p className="text-xs md:text-sm text-gray-500 leading-loose">
-                  {dict.mission.p1}
-                </p>
-                <p className="text-xs md:text-sm text-gray-500 leading-loose">
-                  {dict.mission.p2}
-                </p>
-              </div>
-              <div className="lg:col-span-5 flex justify-center">
-                <div className="relative w-full max-w-md rounded-2xl overflow-hidden shadow-md bg-slate-100">
-                  <img 
-                    src="/images/illust.png" 
-                    alt="Mission Illustration" 
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              </div>
+        <section id="mission" className="py-24 bg-white border-b border-slate-100">
+          <div className="max-w-4xl mx-auto px-6 text-center space-y-8">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#F09A26] block">
+              {dict.mission.tag}
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0B2046] leading-tight tracking-wide">
+              {dict.mission.title.split('\n')[0]}<br />
+              <span className="text-gradient">{dict.mission.title.split('\n')[1]}</span>
+            </h2>
+            <div className="h-1 w-12 bg-[#F09A26] mx-auto rounded"></div>
+            
+            <blockquote className="border-l-4 border-[#F09A26] pl-4 italic text-sm md:text-base text-gray-600 font-medium my-6 leading-relaxed max-w-2xl mx-auto text-left">
+              &ldquo;{dict.mission.quote}&rdquo;
+            </blockquote>
+            <div className="text-xs md:text-sm text-gray-500 leading-loose text-left space-y-4 max-w-2xl mx-auto">
+              <p>{dict.mission.p1}</p>
+              <p>{dict.mission.p2}</p>
             </div>
           </div>
         </section>

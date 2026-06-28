@@ -5,12 +5,6 @@ const locales = ['ja', 'en']
 const defaultLocale = 'ja'
 
 function getLocale(request: NextRequest) {
-  const acceptLanguage = request.headers.get('accept-language')
-  if (!acceptLanguage) return defaultLocale
-
-  if (acceptLanguage.includes('en')) {
-    return 'en'
-  }
   return defaultLocale
 }
 
