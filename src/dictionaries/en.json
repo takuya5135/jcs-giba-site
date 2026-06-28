@@ -1,0 +1,211 @@
+{
+  "nav": {
+    "mission": "MISSION",
+    "principle": "PRINCIPLE",
+    "profile": "PROFILE",
+    "services": "SERVICES",
+    "whyUs": "WHY US",
+    "flow": "FLOW",
+    "contact": "CONTACT"
+  },
+  "hero": {
+    "tag": "Welcome to JCS Giba",
+    "title1": "Blazing trails with passion and intelligence,",
+    "title2": "sincere GIVER",
+    "title3": "co-creating a prosperous society as a .",
+    "desc": "Leveraging our 19 years of practical experience at a frozen food specialty trading company and our global network, we provide consistent procurement and sales support from manufacturing to sales.",
+    "btnServices": "View Services",
+    "btnContact": "Contact Us"
+  },
+  "mission": {
+    "tag": "MISSION",
+    "title": "Continuing to Deliver Value\nas a Sincere GIVER",
+    "quote": "Blazing trails with passion and intelligence, co-creating a prosperous society as a sincere GIVER.",
+    "p1": "These words are the foundation of all activities at JCS Giba. With this mission always in our hearts, we will continue to deliver value to our clients and society.",
+    "p2": "We believe that the core of business is not \"competing to take\" but \"sharing (GIVER)\". As a GIVER, we deliver value that exceeds our clients' expectations in advance. By not only thinking but also visiting the field and keeping our hands and minds active, we aim to be a presence that brightens the future of everyone involved."
+  },
+  "principles": {
+    "tag": "PRINCIPLE",
+    "title": "Uncompromising Guiding Principles \"JCS\"",
+    "desc": "Our core values, named \"JCS\" after the Japanese words for our three guiding principles: Jounetsu (Passion), Chisei (Intelligence), and Sincerity.",
+    "items": [
+      {
+        "letter": "J",
+        "name": "Jounetsu (Passion)",
+        "desc": "Our origin is uncompromising enthusiasm. From the food industry floor to cutting-edge systems, we burn with passion and tackle challenges with all our might."
+      },
+      {
+        "letter": "C",
+        "name": "Chisei (Intelligence)",
+        "desc": "Our weapon is continuous learning. We grasp deep structures and unravel complex issues with wisdom and ideas."
+      },
+      {
+        "letter": "S",
+        "name": "Seii (Sincerity)",
+        "desc": "Our pride is honesty without pretense. We keep our promises, do not deceive, and face everyone involved head-on."
+      }
+    ]
+  },
+  "profile": {
+    "tag": "REPRESENTATIVE PROFILE",
+    "title": "A Partner Combining Hands-on Experience\nwith Management",
+    "subtitle": "Consistently involved in food distribution, building hands-on, field-rooted experience.",
+    "p1": "After gaining 9 years of experience as a store manager and supervisor at a major convenience store chain headquarters, I spent 19 years at a frozen food specialty trading company. There, I was consistently responsible for everything from procurement to sales, including developing overseas suppliers, product development, on-site production setup, shipping management, inventory control, sales channel expansion, and sales.",
+    "p2": "Through my consistent involvement in food distribution, I have gained practical, field-rooted experience while understanding both manufacturing and sales. At a food import trading company, I was entrusted with launching our own brand products (NB products), growing it into a core business by expanding the product lineup and developing sales channels. I established strong relationships of trust by developing many new accounts, especially in Western Japan.",
+    "p3": "Additionally, I have experience leading a team of about 15 members as an executive officer and department manager. As a playing manager combining field sensitivity and management skills, I worked on both achieving results and developing talent.",
+    "name": "Takuya Hata",
+    "role": "Representative Partner"
+  },
+  "services": {
+    "tag": "SERVICES",
+    "title": "Key Services",
+    "desc": "Providing comprehensive support from procurement to sales, unraveling complex challenges in the food and distribution industries.",
+    "items": [
+      {
+        "title": "Matching & Brokerage",
+        "desc": "Providing optimal matching between overseas/domestic food manufacturers and domestic distribution companies, and brokering product sales."
+      },
+      {
+        "title": "Consulting",
+        "desc": "Helping overseas food manufacturers understand the Japanese market and providing consulting for establishing effective marketing and sales strategies."
+      },
+      {
+        "title": "Sales & Procurement Support",
+        "desc": "Providing comprehensive on-the-ground support from both sides: assisting domestic sales for overseas manufacturers, and supporting overseas procurement for domestic distribution companies."
+      }
+    ],
+    "cases": {
+      "title": "Key Case Studies",
+      "tabs": {
+        "domestic": "Domestic Manufacturer",
+        "overseas": "Overseas Manufacturer",
+        "retailer": "Retailers & Trading Co."
+      },
+      "domesticItems": [
+        {
+          "heading": "Matching Support",
+          "icon": "🤝",
+          "points": [
+            "New commercial flow design and matching with major domestic retailers",
+            "Establishing stable new sales channels through product sales brokerage"
+          ]
+        },
+        {
+          "heading": "Sales & Procurement Channel Development",
+          "icon": "📈",
+          "points": [
+            "Developing food retail channels focused on the Western Japan region",
+            "Total support for developing new domestic/overseas suppliers and expanding procurement channels"
+          ]
+        }
+      ],
+      "overseasItems": [
+        {
+          "heading": "Japan Market Entry & Sales Support",
+          "icon": "🌏",
+          "points": [
+            "Effective sales activities and promotional support for overseas food manufacturers in Japan",
+            "On-site production guidance and coordination to adapt to unique Japanese business customs and standards"
+          ]
+        },
+        {
+          "heading": "Consulting",
+          "icon": "💡",
+          "points": [
+            "Consulting and specialized seminars to deepen understanding of the Japanese market",
+            "Advice on packaging and product development tailored to target retail channels"
+          ]
+        }
+      ],
+      "retailerItems": [
+        {
+          "heading": "Manufacturer Matching",
+          "icon": "🛒",
+          "points": [
+            "Direct matching support with excellent domestic and overseas food manufacturers",
+            "Procurement support for private brand (PB) products based on retailer needs"
+          ]
+        },
+        {
+          "heading": "Supplier Development Consulting",
+          "icon": "🔍",
+          "points": [
+            "Consulting on supplier development combining quality control and cost competitiveness, focusing on frozen foods",
+            "Optimization of shipping management, inventory control, and quality standards in the import process"
+          ]
+        }
+      ]
+    }
+  },
+  "whyUs": {
+    "tag": "WHY JCS GIBA",
+    "title": "Why Choose JCS Giba",
+    "items": [
+      {
+        "num": "01",
+        "title": "Extensive Industry Experience",
+        "desc": "Based on 19 years of practical experience at a frozen food specialty trading company, we provide hands-on, consistent insights and process improvement from procurement to sales."
+      },
+      {
+        "num": "02",
+        "title": "Strong Overseas & Domestic Network",
+        "desc": "Leveraging a trusted international network built through developing overseas suppliers and setting up on-site production, we connect you with the ideal partners."
+      },
+      {
+        "num": "03",
+        "title": "Practical Strategic Consulting",
+        "desc": "From entry strategies for the Japanese market to specific marketing, sales plans, and execution support, we provide hands-on, results-oriented partnership."
+      }
+    ]
+  },
+  "flow": {
+    "tag": "BUSINESS FLOW",
+    "title": "Business Flow",
+    "desc": "We walk with you step-by-step from initial hearing to actual operational support based on your needs.",
+    "steps": [
+      {
+        "num": "01",
+        "title": "Hearing",
+        "desc": "We carefully listen to your current challenges, target markets, raw materials to procure, and other needs."
+      },
+      {
+        "num": "02",
+        "title": "Matching & Selection",
+        "desc": "We select the best partner candidates and production factories from our established network to prepare the initial proposal."
+      },
+      {
+        "num": "03",
+        "title": "Strategy Formulation",
+        "desc": "We review specifications tailored to the Japanese market and targets, and formulate marketing and sales strategies."
+      },
+      {
+        "num": "04",
+        "title": "Execution Support",
+        "desc": "We comprehensively support and drive the project, including business negotiations, on-site production attendance, quality adjustments, and shipping management."
+      }
+    ]
+  },
+  "contact": {
+    "tag": "CONTACT",
+    "title": "Feel Free to Contact Us",
+    "desc": "If you have any challenges such as matching overseas/domestic food manufacturers with clients, supporting entry into the Japanese market, or developing overseas procurement sources, please feel free to contact us by email. We will respond with sincerity.",
+    "btn": "Contact via Email"
+  },
+  "footer": {
+    "desc": "Blazing trails with passion and intelligence, co-creating a prosperous society as a sincere GIVER.",
+    "profileTitle": "Company Profile",
+    "linksTitle": "Links",
+    "copyright": "© 2026 JCS Giba LLC. All Rights Reserved.",
+    "slogan": "GIVER of Value to Society",
+    "table": {
+      "name": "Trade Name",
+      "nameVal": "JCS Giba LLC",
+      "rep": "Representative",
+      "repVal": "Takuya Hata",
+      "est": "Established",
+      "estVal": "August 2026",
+      "loc": "Location",
+      "locVal": "1-Chome, Umeda, Kita-ku, Osaka, Japan"
+    }
+  }
+}

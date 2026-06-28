@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-[#F8FAFC] text-[#0B2046] antialiased overflow-x-hidden;
+  }
+}
+
+/* Custom styles for animations & components */
+.text-gradient {
+  background: linear-gradient(135deg, #0B2046 30%, #F09A26 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
