@@ -31,7 +31,7 @@ export default async function Page({ params }: Props) {
             <span className="inline-block text-xs md:text-sm font-bold tracking-widest text-[#F09A26] uppercase mb-6 px-4 py-1.5 rounded-full bg-[#F09A26]/5 border border-[#F09A26]/10">
               {dict.hero.tag}
             </span>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-medium text-[#0B2046] leading-relaxed tracking-[0.1em] mb-8 max-w-4xl mx-auto">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-medium text-[#0B2046] leading-[2.2] tracking-[0.1em] mb-8 max-w-4xl mx-auto">
               {dict.hero.title1}<br />
               <span className="text-[#F09A26]">{dict.hero.title2}</span>
               {dict.hero.title3}
