@@ -55,7 +55,7 @@ export default function Footer({ dict, locale }: Props) {
                 </tr>
                 <tr>
                   <td className="py-2.5 font-semibold text-gray-400">{dict.footer.table.loc}</td>
-                  <td className="py-2.5">{dict.footer.table.locVal}</td>
+                  <td className="py-2.5 whitespace-pre-line">{dict.footer.table.locVal}</td>
                 </tr>
               </tbody>
             </table>
