@@ -27,21 +27,21 @@
   "principles": {
     "tag": "PRINCIPLE ｜ 行为准则",
     "title": "毫不妥协的行为准则“JCS”",
-    "desc": "这是我们在日常决策 and 行动中最重视的三项原则。",
+    "desc": "我们核心价值观的名称“JCS”取自三项行为准则的日语首字母：情热 (Jounetsu / Passion)、知性 (Chisei / Intelligence) 和 诚意 (Seii / Sincerity)。这也是我们在日常决策和行动中最重视的三项原则。",
     "items": [
       {
         "letter": "J",
-        "name": "激情 (Passion)",
+        "name": "情热 / Jounetsu (Passion)",
         "desc": "我们的原点是毫不妥协的热情。从食品生产一线到最先进的系统，我们都将满怀激情，全力以赴地迎接挑战。"
       },
       {
         "letter": "C",
-        "name": "智慧 (Intelligence)",
+        "name": "知性 / Chisei (Intelligence)",
         "desc": "我们的武器是不断学习的智慧。洞察深层结构，用智慧与创意破解复杂的难题。"
       },
       {
         "letter": "S",
-        "name": "真诚 (Sincerity)",
+        "name": "诚意 / Seii (Sincerity)",
         "desc": "我们的骄傲是表里如一的坦诚。信守承诺、不加隐瞒，与所有相关人员坦诚相待。"
       }
     ]
