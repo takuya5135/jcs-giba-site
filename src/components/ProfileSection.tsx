@@ -60,7 +60,7 @@ export default function ProfileSection({ dict, locale }: Props) {
                   onClick={() => setIsExpanded(!isExpanded)}
                   className="flex items-center space-x-2 text-xs font-bold text-[#0B2046] hover:text-[#F09A26] transition-colors border border-slate-200 px-4 py-2.5 rounded-full bg-white shadow-sm"
                 >
-                  <span>{isExpanded ? (locale === 'ja' ? '経歴を折りたたむ' : 'Close Profile') : (locale === 'ja' ? '代表の詳しい経歴を読む' : 'Read Full Profile')}</span>
+                  <span>{isExpanded ? (locale === 'ja' ? '経歴を折りたたむ' : locale === 'zh' ? '收起简历' : 'Close Profile') : (locale === 'ja' ? '代表の詳しい経歴を読む' : locale === 'zh' ? '阅读代表详细履历' : 'Read Full Profile')}</span>
                   {isExpanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                 </button>
               </div>

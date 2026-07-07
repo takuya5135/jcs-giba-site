@@ -39,7 +39,7 @@ export default function Header({ dict, locale }: Props) {
         <Link href={`/${locale}`} className="flex items-center">
           <img 
             src="/images/logo.png" 
-            alt={locale === 'ja' ? '合同会社JCSギバ' : 'JCS Giba LLC'} 
+            alt={locale === 'ja' ? '合同会社JCSギバ' : locale === 'zh' ? 'JCS格巴合同会社' : 'JCS Giba LLC'} 
             className="h-12 lg:h-16 w-auto object-contain"
           />
         </Link>
@@ -71,13 +71,22 @@ export default function Header({ dict, locale }: Props) {
             >
               EN
             </button>
+            <span className="text-gray-300">|</span>
+            <button
+              onClick={() => handleLanguageChange('zh')}
+              className={`px-2 py-1 rounded transition-colors ${locale === 'zh' ? 'text-[#F09A26] bg-[#0B2046]/5' : 'text-gray-400 hover:text-[#0B2046]'}`}
+            >
+              ZH
+            </button>
           </div>
 
           {/* コンタクトボタン */}
           <a
             href={locale === 'ja' 
               ? "mailto:takuya.hata@jcs-giba.com?subject=お問い合わせ&body=会社名：%0D%0Aお名前：%0D%0Aお問い合わせ内容："
-              : "mailto:takuya.hata@jcs-giba.com?subject=Inquiry&body=Company Name:%0D%0AName:%0D%0ADetails of Inquiry:"}
+              : locale === 'zh'
+                ? "mailto:takuya.hata@jcs-giba.com?subject=咨询&body=公司名称：%0D%0A姓名：%0D%0A咨询内容："
+                : "mailto:takuya.hata@jcs-giba.com?subject=Inquiry&body=Company Name:%0D%0AName:%0D%0ADetails of Inquiry:"}
             className="bg-[#0B2046] text-white px-6 py-2.5 rounded-full text-xs font-bold hover:bg-[#F09A26] hover:shadow-md transition-all duration-300"
           >
             CONTACT
@@ -109,8 +118,8 @@ export default function Header({ dict, locale }: Props) {
             ))}
 
             {/* 言語切り替え */}
-            <div className="flex items-center space-x-4 py-2 border-b border-slate-50">
-              <span className="text-xs font-bold text-gray-400">LANGUAGE:</span>
+            <div className="flex items-center space-x-2 py-2 border-b border-slate-50 flex-wrap gap-y-2">
+              <span className="text-xs font-bold text-gray-400 mr-2">LANGUAGE:</span>
               <button
                 onClick={() => { handleLanguageChange('ja'); setIsOpen(false); }}
                 className={`text-sm font-bold px-3 py-1 rounded ${locale === 'ja' ? 'text-[#F09A26] bg-[#0B2046]/5' : 'text-gray-500'}`}
@@ -123,13 +132,21 @@ export default function Header({ dict, locale }: Props) {
               >
                 English (EN)
               </button>
+              <button
+                onClick={() => { handleLanguageChange('zh'); setIsOpen(false); }}
+                className={`text-sm font-bold px-3 py-1 rounded ${locale === 'zh' ? 'text-[#F09A26] bg-[#0B2046]/5' : 'text-gray-500'}`}
+              >
+                中文 (ZH)
+              </button>
             </div>
 
             {/* コンタクトボタン */}
             <a
               href={locale === 'ja'
                 ? "mailto:takuya.hata@jcs-giba.com?subject=お問い合わせ&body=会社名：%0D%0Aお名前：%0D%0Aお問い合わせ内容："
-                : "mailto:takuya.hata@jcs-giba.com?subject=Inquiry&body=Company Name:%0D%0AName:%0D%0ADetails of Inquiry:"}
+                : locale === 'zh'
+                  ? "mailto:takuya.hata@jcs-giba.com?subject=咨询&body=公司名称：%0D%0A姓名：%0D%0A咨询内容："
+                  : "mailto:takuya.hata@jcs-giba.com?subject=Inquiry&body=Company Name:%0D%0AName:%0D%0ADetails of Inquiry:"}
               onClick={() => setIsOpen(false)}
               className="bg-[#0B2046] text-white text-center py-3 rounded-full text-sm font-bold hover:bg-[#F09A26] transition-all duration-300 mt-2 block"
             >

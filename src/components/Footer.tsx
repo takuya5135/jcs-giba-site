@@ -24,7 +24,7 @@ export default function Footer({ dict, locale }: Props) {
           <Link href={`/${locale}`} className="flex flex-col">
             <span className="text-2xl font-bold tracking-wider text-white">JCS Giba</span>
             <span className="text-xs text-gray-400 mt-1 font-medium">
-              {locale === 'ja' ? '合同会社JCSギバ' : 'JCS Giba LLC'}
+              {locale === 'ja' ? '合同会社JCSギバ' : locale === 'zh' ? 'JCS格巴合同会社' : 'JCS Giba LLC'}
             </span>
           </Link>
           <p className="text-sm text-gray-300 max-w-sm leading-relaxed">
