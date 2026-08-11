@@ -4,6 +4,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProfileSection from '@/components/ProfileSection';
 import ServicesSection from '@/components/ServicesSection';
+import ContactSection from '@/components/ContactSection';
+import { getMailtoLink } from '@/lib/contact';
 import { Lightbulb, Users, Compass, ChevronRight } from 'lucide-react';
 
 type Props = {
@@ -58,11 +60,7 @@ export default async function Page({ params }: Props) {
                 {dict.hero.btnServices}
               </a>
               <a 
-                href={locale === 'ja'
-                  ? "mailto:takuya.hata@jcs-giba.com?subject=お問い合わせ"
-                  : locale === 'zh'
-                    ? "mailto:takuya.hata@jcs-giba.com?subject=咨询"
-                    : "mailto:takuya.hata@jcs-giba.com?subject=Inquiry"}
+                href={getMailtoLink(locale)}
                 className="w-full sm:w-auto bg-white border-2 border-[#0B2046] text-[#0B2046] hover:bg-slate-50 px-10 py-3.5 rounded-full font-bold transition-all duration-300 text-xs md:text-sm tracking-wider"
               >
                 {dict.hero.btnContact}
@@ -235,30 +233,7 @@ export default async function Page({ params }: Props) {
         </section>
 
         {/* --- Contact Section --- */}
-        <section id="contact" className="py-24 bg-[#0B2046] text-white text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-900 via-[#0B2046] to-[#0B2046] opacity-60"></div>
-          <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#F09A26] mb-4 block">
-              {dict.contact.tag}
-            </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold mb-6">
-              {dict.contact.title}
-            </h2>
-            <p className="text-xs md:text-sm text-gray-300 max-w-2xl mx-auto leading-loose mb-10">
-              {dict.contact.desc}
-            </p>
-            <a 
-              href={locale === 'ja'
-                ? "mailto:takuya.hata@jcs-giba.com?subject=【お問い合わせ】合同会社JCSギバ&body=会社名：%0D%0Aお名前：%0D%0Aお電話番号：%0D%0Aお問い合わせ内容："
-                : locale === 'zh'
-                  ? "mailto:takuya.hata@jcs-giba.com?subject=【咨询】JCS格巴合同会社&body=公司名称：%0D%0A姓名：%0D%0A电话号码：%0D%0A咨询内容："
-                  : "mailto:takuya.hata@jcs-giba.com?subject=[Inquiry] JCS Giba LLC&body=Company Name:%0D%0AName:%0D%0APhone Number:%0D%0ADetails of Inquiry:"}
-              className="inline-block bg-[#F09A26] hover:bg-[#d6851f] text-white px-12 py-4 rounded-full font-bold shadow-md hover:shadow-lg transition-all duration-300 text-xs md:text-sm"
-            >
-              {dict.contact.btn}
-            </a>
-          </div>
-        </section>
+        <ContactSection dict={dict} locale={locale} />
 
       </main>
 
