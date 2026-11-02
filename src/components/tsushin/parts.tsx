@@ -52,7 +52,7 @@ const MENU: { t: string; d: string; icon: string; href?: string; wide?: boolean 
   { t: '外国人材の受け入れ支援', d: '特定技能・育成就労、2027年の制度改正への備え。クレセント協同組合（仮称）設立準備室', href: '/crescent', icon: '/images/tsushin/icon-jinzai.jpg' },
   {
     t: '調達・販路の仲介とコンサルティング',
-    d: '海外・国内メーカーと流通をつなぐ。輸入停止時の代替調達、海外メーカーの日本参入、商品開発と販売戦略も',
+    d: '営業人員不足で販路拡大にお悩みの方、調達力強化のために仕入先拡大が課題の方をお手伝いいたします。',
     href: '#services',
     icon: '/images/tsushin/icon-jcs.jpg',
     wide: true,
