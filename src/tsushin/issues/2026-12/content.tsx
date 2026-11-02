@@ -190,7 +190,7 @@ export default function Content() {
 
       <Part>畑のひとこと</Part>
       <section className="flex items-start gap-4">
-        <img src="/images/tsushin/hata.png" alt="畑 拓也" width={72} height={72} className="mt-3 h-[72px] w-[72px] shrink-0 rounded-full" />
+        <img src="/images/tsushin/hata.png" alt="畑 拓也" width={88} height={88} className="mt-3 h-[88px] w-[88px] shrink-0 rounded-full" />
         <div>
           <P>
             <Todo>最近食べた・飲んだもの、行った場所、商談で聞いた話を、2〜3行で</Todo>

@@ -39,7 +39,7 @@ export default function IssuePage({ params }: Props) {
         <p className="text-xs font-bold tracking-[0.25em] text-slate-500">GIBA TSUSHIN</p>
         <h1 className="mt-2 text-3xl font-bold text-[#0B2046]">ギバ通信</h1>
         <div className="mt-4 flex items-center gap-3">
-          <img src="/images/tsushin/hata.png" alt="畑 拓也" width={52} height={52} className="h-[52px] w-[52px] rounded-full" />
+          <img src="/images/tsushin/hata.png" alt="畑 拓也" width={72} height={72} className="h-[72px] w-[72px] rounded-full" />
           <div>
             <p className="text-sm font-bold text-[#0B2046]">畑 拓也</p>
             <p className="text-xs text-slate-500">
