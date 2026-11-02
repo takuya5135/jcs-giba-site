@@ -6,7 +6,9 @@
     "services": "SERVICES",
     "whyUs": "WHY US",
     "flow": "FLOW",
-    "contact": "CONTACT"
+    "contact": "CONTACT",
+    "business": "BUSINESS",
+    "tsushin": "GIBA TSUSHIN"
   },
   "hero": {
     "tag": "Welcome to JCS Giba",
@@ -206,6 +208,47 @@
       "estVal": "令和8年（2026年）8月",
       "loc": "所在地",
       "locVal": "〒530-0001\n大阪府大阪市北区梅田1丁目1番3号\n大阪駅前第3ビル11階2号室"
-    }
+    },
+    "pagesTitle": "事業・ギバ通信"
+  },
+  "pillars": {
+    "tag": "BUSINESS",
+    "title": "こんな時は、まずJCSギバへ",
+    "desc": "食品・流通の現場で起きる「困った」に、3つの事業でお応えします。",
+    "more": "詳しく見る",
+    "items": [
+      {
+        "title": "お悩み在庫の買い取り",
+        "desc": "冷凍食品の過剰在庫・期限の近い品・B級品・端材を一括で買い取り。価格を崩さず業務筋へつなぎます。",
+        "href": "/ja/kaitori",
+        "icon": "/images/tsushin/icon-kaitori.jpg"
+      },
+      {
+        "title": "外国人材の受け入れ支援",
+        "desc": "特定技能・育成就労、2027年の制度改正への備え。クレセント協同組合（仮称）設立準備室。",
+        "href": "/ja/crescent",
+        "icon": "/images/tsushin/icon-jinzai.jpg"
+      },
+      {
+        "title": "販路拡大・仕入先拡大のお手伝い",
+        "desc": "営業人員不足で販路拡大にお悩みの方、調達力強化のために仕入先拡大が課題の方をお手伝いいたします。",
+        "href": "#services",
+        "icon": "/images/tsushin/icon-jcs.jpg"
+      }
+    ]
+  },
+  "tsushin": {
+    "tag": "GIBA TSUSHIN",
+    "title": "ギバ通信",
+    "desc": "毎月16日ごろ、お取引先とギバフレンドの皆さまに、食肉・食品の相場と物流の数字を、現場で聞いた話と一緒にお届けしています。",
+    "points": [
+      "今号の一本：1テーマの読み切り",
+      "定点観測：為替・飼料・鶏肉・牛肉・豚肉など20項目の最新値と前月比・前年比",
+      "輸入停止・解除の動き"
+    ],
+    "btnSubscribe": "配信を申し込む",
+    "btnBack": "バックナンバーを見る",
+    "subject": "【ギバ通信 配信希望】",
+    "body": "会社名：\nお名前：\n配信先メールアドレス：\n"
   }
 }

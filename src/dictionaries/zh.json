@@ -6,7 +6,9 @@
     "services": "SERVICES",
     "whyUs": "WHY US",
     "flow": "FLOW",
-    "contact": "CONTACT"
+    "contact": "CONTACT",
+    "business": "BUSINESS",
+    "tsushin": "GIBA TSUSHIN"
   },
   "hero": {
     "tag": "Welcome to JCS Giba",
@@ -206,6 +208,47 @@
       "estVal": "2026年8月",
       "loc": "所在地",
       "locVal": "邮编530-0001\n日本大阪府大阪市北区梅田1丁目1番3号\n大阪车站前第3大厦11楼2号室"
-    }
+    },
+    "pagesTitle": "业务与通信"
+  },
+  "pillars": {
+    "tag": "BUSINESS",
+    "title": "遇到困难时，请先联系JCS格巴",
+    "desc": "通过三项业务，回应食品与流通现场的各种难题。",
+    "more": "查看详情（日文）",
+    "items": [
+      {
+        "title": "收购冷冻食品库存",
+        "desc": "整批收购过剩库存、临期商品、B级品及边角料，在不扰乱市场价格的前提下转入餐饮及团膳渠道。",
+        "href": "/ja/kaitori",
+        "icon": "/images/tsushin/icon-kaitori.jpg"
+      },
+      {
+        "title": "外国人才引进支援",
+        "desc": "特定技能及2027年起实施的育成就劳制度。新月协同组合（暂定名）筹备室。",
+        "href": "/ja/crescent",
+        "icon": "/images/tsushin/icon-jinzai.jpg"
+      },
+      {
+        "title": "协助拓展销路与供应商",
+        "desc": "为营业人员不足、苦于拓展销路的企业，以及希望扩充供应商以增强采购能力的企业提供协助。",
+        "href": "#services",
+        "icon": "/images/tsushin/icon-jcs.jpg"
+      }
+    ]
+  },
+  "tsushin": {
+    "tag": "GIBA TSUSHIN",
+    "title": "格巴通信",
+    "desc": "每月16日前后，我们以日文向合作伙伴发送食肉与食品行情、物流数据及现场见闻。",
+    "points": [
+      "本期专题：每期一个主题",
+      "定点观测：20项指标的最新值及环比、同比",
+      "进口暂停与解除动态"
+    ],
+    "btnSubscribe": "申请订阅",
+    "btnBack": "往期（日文）",
+    "subject": "【格巴通信 订阅申请】",
+    "body": "公司名称：\n姓名：\n接收邮箱：\n"
   }
 }

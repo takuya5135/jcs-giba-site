@@ -5,6 +5,8 @@ import Footer from '@/components/Footer';
 import ProfileSection from '@/components/ProfileSection';
 import ServicesSection from '@/components/ServicesSection';
 import ContactSection from '@/components/ContactSection';
+import BusinessPillars from '@/components/BusinessPillars';
+import TsushinSection from '@/components/TsushinSection';
 import { getMailtoLink } from '@/lib/contact';
 import { Lightbulb, Users, Compass, ChevronRight } from 'lucide-react';
 
@@ -54,7 +56,7 @@ export default async function Page({ params }: Props) {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-sm sm:max-w-none mx-auto w-full">
               <a 
-                href="#services" 
+                href="#business" 
                 className="w-full sm:w-auto bg-[#F09A26] hover:bg-[#d6851f] text-white px-10 py-4 rounded-full font-bold shadow-sm hover:shadow-md transition-all duration-300 text-xs md:text-sm tracking-wider"
               >
                 {dict.hero.btnServices}
@@ -68,6 +70,9 @@ export default async function Page({ params }: Props) {
             </div>
           </div>
         </section>
+
+        {/* --- Business Pillars --- */}
+        <BusinessPillars dict={dict} locale={locale} />
 
         {/* --- Mission Section --- */}
         <section id="mission" className="py-24 bg-white border-b border-slate-100">
@@ -231,6 +236,9 @@ export default async function Page({ params }: Props) {
             </div>
           </div>
         </section>
+
+        {/* --- Giba Tsushin --- */}
+        <TsushinSection dict={dict} locale={locale} />
 
         {/* --- Contact Section --- */}
         <ContactSection dict={dict} locale={locale} />

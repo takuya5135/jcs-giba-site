@@ -8,12 +8,14 @@ type Props = {
 
 export default function Footer({ dict, locale }: Props) {
   const footerLinks = [
+    { href: "#business", label: dict.nav.business },
     { href: "#mission", label: dict.nav.mission },
     { href: "#principles", label: dict.nav.principle },
     { href: "#profile", label: dict.nav.profile },
     { href: "#services", label: dict.nav.services },
     { href: "#why-us", label: dict.nav.whyUs },
     { href: "#flow", label: dict.nav.flow },
+    { href: "#tsushin", label: dict.nav.tsushin },
   ];
 
   return (
@@ -71,6 +73,18 @@ export default function Footer({ dict, locale }: Props) {
                 <li key={link.href}>
                   <a href={link.href} className="hover:text-[#F09A26] transition-colors duration-300 block py-1">
                     {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <h4 className="text-base font-bold mt-8 mb-4 pb-2 border-b border-slate-700 text-gray-200">
+              {dict.footer.pagesTitle}
+            </h4>
+            <ul className="space-y-2 text-sm text-gray-300">
+              {[...dict.pillars.items.filter((it: any) => it.href.startsWith('/')), { title: dict.tsushin.title, href: '/ja/tsushin' }].map((it: any) => (
+                <li key={it.href}>
+                  <a href={it.href} className="hover:text-[#F09A26] transition-colors duration-300 block py-1">
+                    {it.title}
                   </a>
                 </li>
               ))}
