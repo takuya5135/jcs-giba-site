@@ -57,7 +57,7 @@ export default function Content() {
             アルコール度数も5度ですので、たいへん飲みやすく、「ホットワインではアルコール度数が高すぎる」という、あまりお酒が得意ではない方へもオススメできる一杯でした。それにしても、昼飲みというのは気分が良いですね！
           </P>
           <P>
-            ご参考までにリンクを掲載しておきます。ご興味のある方はチェックしてみてください。
+            ご参考までにホットビールのリンクを掲載しておきます。ご興味のある方はチェックしてみてください。
             <br />
             <a href="https://www.seiwa-ic.co.jp/hotbeer/" target="_blank" rel="noopener noreferrer" className="break-all text-[#0B2046] underline">
               https://www.seiwa-ic.co.jp/hotbeer/
