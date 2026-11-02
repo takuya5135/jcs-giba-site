@@ -38,15 +38,9 @@ export default function IssuePage({ params }: Props) {
       <main className="mx-auto max-w-3xl px-4 pb-20 pt-10">
         <p className="text-xs font-bold tracking-[0.25em] text-slate-500">GIBA TSUSHIN</p>
         <h1 className="mt-2 text-3xl font-bold text-[#0B2046]">ギバ通信</h1>
-        <div className="mt-4 flex items-center gap-3">
-          <img src="/images/tsushin/hata.png" alt="畑 拓也" width={72} height={72} className="h-[72px] w-[72px] rounded-full" />
-          <div>
-            <p className="text-sm font-bold text-[#0B2046]">畑 拓也</p>
-            <p className="text-xs text-slate-500">
-              {issue.label ?? `第${issue.no}号`} ｜ {jaDate(issue.date)}
-            </p>
-          </div>
-        </div>
+        <p className="mt-2 text-sm text-slate-500">
+          {issue.label ?? `第${issue.no}号`} ｜ {jaDate(issue.date)} ｜ 畑 拓也
+        </p>
         <Body />
         <TsushinFooter locale={params.locale} sources={sources} />
       </main>
