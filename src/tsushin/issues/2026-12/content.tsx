@@ -1,15 +1,19 @@
 // ギバ通信 創刊号（2026年12月）本文
 import LineChart from '@/components/tsushin/LineChart';
 import TeitenTable from '@/components/tsushin/TeitenTable';
+import TeishiTable, { TeishiRow } from '@/components/tsushin/TeishiTable';
 import { Card, H3, P, Part, Todo } from '@/components/tsushin/parts';
 import { ChickenRow, JarwRow, TeitenRow, chickenKpi, jarwSeason, jarwStock, pct1, signed, ym, yen } from '@/tsushin/calc';
 import chickenData from './chicken.json';
 import jarwData from './jarw.json';
 import teitenData from './teiten.json';
+import teishiData from './teishi.json';
 
 const chicken = chickenData as ChickenRow[];
 const jarw = jarwData as JarwRow[];
 const teiten = teitenData as TeitenRow[];
+const teishi = teishiData as TeishiRow[];
+const teishiCount = (c: string, k: string) => teishi.filter((r) => r.分類 === c && r.区分 === k).length;
 
 const TIGHT = 93; // 現場で「タイト」と感じる庫腹占有率の目安（畑さんの感覚）
 
@@ -17,6 +21,7 @@ export const sources = [
   '農林水産省「食鳥市況情報」、財務省「貿易統計」',
   '日本冷蔵倉庫協会「主要12都市受寄物庫腹利用・品目別在庫」',
   '農林水産省「食肉卸売市場調査（日別）」（東京市場）',
+  '農林水産省 動物検疫所「動検NEWS」（輸入停止・解除情報）',
   '日本銀行「企業向けサービス価格指数」、IMF一次産品価格・為替（米セントルイス連銀 FRED）',
 ];
 
@@ -85,7 +90,7 @@ export default function Content() {
 
         <H3>保管は、タダではない</H3>
         <P>
-          見落とされがちなのは、在庫を置く場所の話です。とくに冷凍は倉庫が足りません。在庫を抱えすぎると、すでに契約したコンテナが港に着いても入れる場所がない。そうなれば、値段に関係なく出すしかありません。この秋は、お米が赤字で投げ売りされていました。
+          見落とされがちなのは、在庫を置く場所の話です。とくに冷凍は倉庫が足りません。在庫を抱えすぎると、すでに契約したコンテナが港に着いても入れる場所がない。そうなれば、値段に関係なく出すしかありません。
         </P>
         <P>
           この夏、ほかのプレーヤーからも「契約残が次々に入ってくるので、出庫しないと入らない。だから値引きしている」という話を何度も聞きました。営業冷蔵庫の方からは、こんな話も聞いています。
@@ -172,6 +177,15 @@ export default function Content() {
           毎号、同じ数字を並べます。上がったものを赤、下がったものを緑で表示しています（庫腹占有率はポイント差）。統計ごとに公表の時期が違うため、「月」は項目ごとに異なります。輸入は通関時の単価、国産の牛豚は枝肉価格（税込）、国産の鶏は卸値（税別）です。
         </p>
         <TeitenTable rows={teiten} />
+
+        <h3 className="mt-10 mb-2 font-bold text-[#0B2046]">輸入停止・解除の動き</h3>
+        <p className="mb-4 text-xs leading-relaxed text-slate-500">
+          農林水産省 動物検疫所の通知（2026年8月25日〜10月30日）から。日付は通知の日です。
+        </p>
+        <p className="mb-2 text-sm font-bold text-[#0B2046]">
+          畜肉 <span className="ml-2 text-xs font-normal text-slate-500">停止 {teishiCount('畜肉', '停止')}件・解除 {teishiCount('畜肉', '解除')}件。すべて鳥インフルエンザによる家きん肉等の措置です。</span>
+        </p>
+        <TeishiTable rows={teishi.filter((r) => r.分類 === '畜肉')} />
       </section>
 
       <Part>畑のひとこと</Part>
