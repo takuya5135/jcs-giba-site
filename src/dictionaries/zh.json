@@ -218,6 +218,13 @@
     "more": "查看详情（日文）",
     "items": [
       {
+        "title": "协助拓展销路与供应商",
+        "desc": "为营业人员不足、苦于拓展销路的企业，以及希望扩充供应商以增强采购能力的企业提供协助。",
+        "href": "#services",
+        "icon": "/images/tsushin/icon-jcs.jpg",
+        "main": true
+      },
+      {
         "title": "收购冷冻食品库存",
         "desc": "整批收购过剩库存、临期商品、B级品及边角料，在不扰乱市场价格的前提下转入餐饮及团膳渠道。",
         "href": "/ja/kaitori",
@@ -228,14 +235,9 @@
         "desc": "特定技能及2027年起实施的育成就劳制度。新月协同组合（暂定名）筹备室。",
         "href": "/ja/crescent",
         "icon": "/images/tsushin/icon-jinzai.jpg"
-      },
-      {
-        "title": "协助拓展销路与供应商",
-        "desc": "为营业人员不足、苦于拓展销路的企业，以及希望扩充供应商以增强采购能力的企业提供协助。",
-        "href": "#services",
-        "icon": "/images/tsushin/icon-jcs.jpg"
       }
-    ]
+    ],
+    "mainLabel": "主营业务"
   },
   "tsushin": {
     "tag": "GIBA TSUSHIN",

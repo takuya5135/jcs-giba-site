@@ -218,6 +218,13 @@
     "more": "Learn more (Japanese)",
     "items": [
       {
+        "title": "Expanding Sales Channels and Suppliers",
+        "desc": "We help companies short of sales staff to expand their sales channels, and companies looking to strengthen procurement to expand their supplier base.",
+        "href": "#services",
+        "icon": "/images/tsushin/icon-jcs.jpg",
+        "main": true
+      },
+      {
         "title": "Buying Surplus Frozen Food Inventory",
         "desc": "We buy surplus stock, near-expiry items, B-grade products and trimmings in bulk, and pass them to food-service channels without disturbing market prices.",
         "href": "/ja/kaitori",
@@ -228,14 +235,9 @@
         "desc": "Specified Skilled Worker and the new Employment for Skill Development system starting 2027. Crescent Cooperative (tentative) preparatory office.",
         "href": "/ja/crescent",
         "icon": "/images/tsushin/icon-jinzai.jpg"
-      },
-      {
-        "title": "Expanding Sales Channels and Suppliers",
-        "desc": "We help companies short of sales staff to expand their sales channels, and companies looking to strengthen procurement to expand their supplier base.",
-        "href": "#services",
-        "icon": "/images/tsushin/icon-jcs.jpg"
       }
-    ]
+    ],
+    "mainLabel": "Main business"
   },
   "tsushin": {
     "tag": "GIBA TSUSHIN",
