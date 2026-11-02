@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { CONTACT_EMAIL } from '@/lib/contact';
-import { Todo } from '@/components/tsushin/parts';
 
 // お悩み在庫買い取り事業（株式会社フレックスとの連携）の紹介ページ。当面日本語のみ。
 
@@ -14,9 +13,9 @@ export function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  title: 'お悩み在庫の一括買い取り | 合同会社JCSギバ',
+  title: '冷凍食品のお悩み在庫 一括買い取り | 合同会社JCSギバ',
   description:
-    '過剰在庫・季節品・ロットアウト・賞味期限期近品・製造端材・規格外品を一括で買い取り査定。お弁当屋さんなどの業務筋へ販売するため、特価の情報が漏れにくく、ブランド価値と市場価格を守れます。株式会社フレックスと連携。',
+    '冷凍食品（業務用・家庭用）の過剰在庫・季節品・ロットアウト・リコール品・賞味期限期近品・製造端材・規格外品を一括で買い取り査定。お弁当屋さんなどの業務筋へ販売するため、特価の情報が漏れにくく、ブランド価値と市場価格を守れます。株式会社フレックスと連携。',
 };
 
 const ITEMS = [
@@ -29,15 +28,15 @@ const ITEMS = [
 ];
 
 const STEPS = [
-  ['ご相談', 'メールで、品名・数量・賞味期限・保管場所と温度帯を教えてください。写真や規格書があれば添えてください。'],
+  ['ご相談', 'メールで、品名・数量・賞味期限・保管場所を教えてください。写真や規格書があれば添えてください。'],
   ['査定・お見積り', 'まとまった数量でも、一括で査定してお見積りします。'],
-  ['お引き取り', 'フレックスの専用倉庫へ一括で納品いただきます。'],
+  ['お引き取り', 'フレックスの専用倉庫（㈱アクティブ綾川物流センター／香川県綾川町）へ、一括で納品いただきます。'],
   ['業務筋へ販売', 'お弁当屋さんなどの業務筋で、調理・加工されて消費されます。'],
 ];
 
 const mailto = (() => {
   const subject = '【在庫買い取りのご相談】';
-  const body = '会社名：\nお名前：\nお電話番号：\n\n品名：\n数量：\n賞味期限：\n保管場所・温度帯（冷凍／冷蔵／常温）：\nご希望の時期：\n\n※写真や規格書があれば添付してください。';
+  const body = '会社名：\nお名前：\nお電話番号：\n\n品名：\n数量：\n賞味期限：\n保管場所：\nご希望の時期：\n\n※写真や規格書があれば添付してください。';
   return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 })();
 
@@ -81,7 +80,7 @@ export default function KaitoriPage({ params }: Props) {
           <div className="mx-auto max-w-4xl px-5 py-16 sm:py-20">
             <p className="text-xs font-bold tracking-[0.2em] text-[#F09A26]">お悩み在庫 一括買い取り</p>
             <h1 className="mt-4 text-3xl font-bold leading-snug sm:text-4xl">
-              食品在庫のお悩み、
+              冷凍食品在庫のお悩み、
               <br />
               <span className="text-[#F09A26]">「一括買い取り」</span>で解決します。
             </h1>
@@ -105,7 +104,7 @@ export default function KaitoriPage({ params }: Props) {
             ))}
           </div>
           <p className="mt-4 text-sm text-slate-600">
-            <Todo>対象の温度帯（冷凍のみ／冷蔵・常温も可）と、最低ロットの目安があれば</Todo>
+            取り扱いは、原則として冷凍食品（業務用・家庭用）に限ります。
           </p>
         </Section>
 
@@ -149,7 +148,7 @@ export default function KaitoriPage({ params }: Props) {
             ))}
           </ol>
           <p className="mt-4 text-sm text-slate-600">
-            <Todo>お支払いの条件やスピード（「即日」など）を書くなら、ここに</Todo>
+            口座が未開設の場合のお支払い条件については、お気軽にご相談ください。
           </p>
         </Section>
 
@@ -160,19 +159,19 @@ export default function KaitoriPage({ params }: Props) {
               <dl className="text-sm">
                 {[
                   ['買い取り', '株式会社フレックス'],
-                  ['本社', '愛媛県今治市'],
-                  ['営業所', '香川県丸亀市'],
+                  ['本社', '〒799-1502 愛媛県今治市喜田村4-3-20'],
+                  ['納品場所', '㈱アクティブ綾川物流センター\n香川県綾歌郡綾川町小野883'],
                   ['主な販売先', '香川・関西方面の弁当・惣菜製造業者'],
                   ['窓口', '関西支店長　畑 拓也（合同会社JCSギバ 代表社員）'],
                 ].map(([k, v]) => (
                   <div key={k} className="flex gap-3 border-b border-slate-100 py-2">
                     <dt className="w-24 shrink-0 text-slate-500">{k}</dt>
-                    <dd className="text-[#0B2046]">{v}</dd>
+                    <dd className="whitespace-pre-line text-[#0B2046]">{v}</dd>
                   </div>
                 ))}
               </dl>
               <p className="text-sm leading-relaxed text-slate-700">
-                ご相談の窓口は、JCSギバ代表の畑が務めます。畑は大手コンビニチェーン本部で9年、食品専門商社で19年、業務用冷凍食品の商品開発・海外調達・営業に携わってきました。メーカー側の事情も、売り場側の事情もわかったうえで、無理のない出口を一緒に考えます。
+                ご相談の窓口は、JCSギバ代表の畑が務めます。畑は流通の現場で9年、食品専門商社で19年、業務用冷凍食品の商品開発・海外調達・営業に携わってきました。メーカー側の事情も、売り場側の事情もわかったうえで、無理のない出口を一緒に考えます。
               </p>
             </div>
           </Section>
