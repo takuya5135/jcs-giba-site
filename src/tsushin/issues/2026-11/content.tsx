@@ -1,4 +1,4 @@
-// ギバ通信 創刊号（2026年12月）本文
+// ギバ通信 テスト号（2026年11月）本文
 import LineChart from '@/components/tsushin/LineChart';
 import TeitenTable from '@/components/tsushin/TeitenTable';
 import TeishiTable, { TeishiRow } from '@/components/tsushin/TeishiTable';
@@ -64,7 +64,7 @@ export default function Content() {
             </a>
           </P>
           <figure className="my-6 max-w-[260px]">
-            <img src="/images/tsushin/2026-12-hotbeer.jpg" alt="ホットビールを試飲する畑" className="w-full rounded-xl" />
+            <img src="/images/tsushin/2026-11-hotbeer.jpg" alt="ホットビールを試飲する畑" className="w-full rounded-xl" />
             <figcaption className="mt-2 text-xs text-slate-500">伊丹でホットビールを試飲</figcaption>
           </figure>
         </div>
