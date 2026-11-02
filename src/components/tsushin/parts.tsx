@@ -46,11 +46,12 @@ export function TsushinHeader({ locale }: { locale: string }) {
   );
 }
 
-const MENU = [
-  ['お悩み在庫の買い取り', '過剰在庫・期限の近い品・B級品・端材を、価格を崩さず業務筋へ'],
-  ['調達と販路の仲介', '海外・国内メーカーと流通をつなぐ。輸入停止時の代替調達も'],
-  ['外国人材の受け入れ支援', '特定技能・育成就労、2027年の制度改正への備え'],
-  ['日本市場のコンサルティング', '海外メーカーの日本参入、商品開発と販売戦略'],
+// href があるものは詳しいページへリンクする
+const MENU: { t: string; d: string; href?: string }[] = [
+  { t: 'お悩み在庫の買い取り', d: '過剰在庫・期限の近い品・B級品・端材を、価格を崩さず業務筋へ', href: '/kaitori' },
+  { t: '調達と販路の仲介', d: '海外・国内メーカーと流通をつなぐ。輸入停止時の代替調達も' },
+  { t: '外国人材の受け入れ支援', d: '特定技能・育成就労、2027年の制度改正への備え' },
+  { t: '日本市場のコンサルティング', d: '海外メーカーの日本参入、商品開発と販売戦略' },
 ];
 
 export function TsushinFooter({ locale, sources }: { locale: string; sources: string[] }) {
@@ -58,12 +59,26 @@ export function TsushinFooter({ locale, sources }: { locale: string; sources: st
     <footer className="mt-16 border-t border-slate-200 pt-8">
       <p className="font-bold text-[#0B2046]">こんな時は、まずJCSギバへ</p>
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
-        {MENU.map(([t, d]) => (
-          <div key={t} className="rounded-lg bg-white border border-slate-200 p-4">
-            <p className="font-bold text-sm text-[#0B2046]">{t}</p>
-            <p className="mt-1 text-xs leading-relaxed text-slate-600">{d}</p>
-          </div>
-        ))}
+        {MENU.map(({ t, d, href }) => {
+          const inner = (
+            <>
+              <p className="font-bold text-sm text-[#0B2046]">
+                {t}
+                {href && <span className="ml-1 text-[#F09A26]">→</span>}
+              </p>
+              <p className="mt-1 text-xs leading-relaxed text-slate-600">{d}</p>
+            </>
+          );
+          return href ? (
+            <Link key={t} href={`/${locale}${href}`} className="block rounded-lg bg-white border border-slate-200 p-4 hover:border-[#F09A26]">
+              {inner}
+            </Link>
+          ) : (
+            <div key={t} className="rounded-lg bg-white border border-slate-200 p-4">
+              {inner}
+            </div>
+          );
+        })}
       </div>
       <p className="mt-6 text-sm leading-relaxed text-slate-700">
         どんな小さな案件でも、声をかけてください。
@@ -72,10 +87,6 @@ export function TsushinFooter({ locale, sources }: { locale: string; sources: st
         <a className="text-[#0B2046] underline" href={`mailto:${CONTACT_EMAIL}`}>
           {CONTACT_EMAIL}
         </a>
-        　／　
-        <Link className="text-[#0B2046] underline" href={`/${locale}`}>
-          会社案内
-        </Link>
       </p>
       <p className="mt-4 rounded-lg bg-slate-100 p-3 text-xs leading-relaxed text-slate-600">
         ご紹介でお読みの方へ：ギバ通信の配信をご希望の方は、お気軽にご連絡ください。
