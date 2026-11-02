@@ -48,8 +48,6 @@ export function TsushinHeader({ locale }: { locale: string }) {
 
 // href があるものは詳しいページへリンクする
 const MENU: { t: string; d: string; icon: string; href?: string; wide?: boolean }[] = [
-  { t: 'お悩み在庫の買い取り', d: '冷凍食品の過剰在庫・期限の近い品・B級品・端材を、価格を崩さず業務筋へ', href: '/kaitori', icon: '/images/tsushin/icon-kaitori.jpg' },
-  { t: '外国人材の受け入れ支援', d: '特定技能・育成就労、2027年の制度改正への備え。クレセント協同組合（仮称）設立準備室', href: '/crescent', icon: '/images/tsushin/icon-jinzai.jpg' },
   {
     t: '調達・販路の仲介とコンサルティング',
     d: '営業人員不足で販路拡大にお悩みの方、調達力強化のために仕入先拡大が課題の方をお手伝いいたします。',
@@ -57,6 +55,8 @@ const MENU: { t: string; d: string; icon: string; href?: string; wide?: boolean 
     icon: '/images/tsushin/icon-jcs.jpg',
     wide: true,
   },
+  { t: 'お悩み在庫の買い取り', d: '冷凍食品の過剰在庫・期限の近い品・B級品・端材を、価格を崩さず業務筋へ', href: '/kaitori', icon: '/images/tsushin/icon-kaitori.jpg' },
+  { t: '外国人材の受け入れ支援', d: '特定技能・育成就労、2027年の制度改正への備え。クレセント協同組合（仮称）設立準備室', href: '/crescent', icon: '/images/tsushin/icon-jinzai.jpg' },
 ];
 
 export function TsushinFooter({ locale, sources }: { locale: string; sources: string[] }) {

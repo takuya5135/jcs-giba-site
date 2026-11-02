@@ -25,12 +25,14 @@ export default function Header({ dict, locale }: Props) {
   };
 
   const navLinks = [
+    { href: "#business", label: dict.nav.business },
     { href: "#mission", label: dict.nav.mission },
     { href: "#principles", label: dict.nav.principle },
     { href: "#profile", label: dict.nav.profile },
     { href: "#services", label: dict.nav.services },
     { href: "#why-us", label: dict.nav.whyUs },
     { href: "#flow", label: dict.nav.flow },
+    { href: "#tsushin", label: dict.nav.tsushin },
   ];
 
   const mailtoUrl = getMailtoLink(locale);
@@ -39,7 +41,7 @@ export default function Header({ dict, locale }: Props) {
     <header className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
         {/* ロゴ */}
-        <Link href={`/${locale}`} className="flex items-center">
+        <Link href={`/${locale}`} className="flex shrink-0 items-center">
           <img 
             src="/images/logo.png" 
             alt={locale === 'ja' ? '合同会社JCSギバ' : locale === 'zh' ? 'JCS格巴合同会社' : 'JCS Giba LLC'} 
@@ -48,12 +50,12 @@ export default function Header({ dict, locale }: Props) {
         </Link>
 
         {/* PC用ナビゲーション */}
-        <nav className="hidden lg:flex items-center space-x-8">
+        <nav className="hidden xl:flex items-center space-x-7">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-xs font-semibold text-[#0B2046] hover:text-[#F09A26] transition-colors duration-300"
+              className="text-xs font-semibold text-[#0B2046] hover:text-[#F09A26] transition-colors duration-300 whitespace-nowrap"
             >
               {link.label}
             </a>
@@ -95,7 +97,7 @@ export default function Header({ dict, locale }: Props) {
         {/* スマホ用トグルボタン */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden p-2 text-[#0B2046] focus:outline-none"
+          className="xl:hidden p-2 text-[#0B2046] focus:outline-none"
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
@@ -103,7 +105,7 @@ export default function Header({ dict, locale }: Props) {
 
       {/* スマホ用メニュー */}
       {isOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-100 py-6 px-6 shadow-inner">
+        <div className="xl:hidden bg-white border-b border-slate-100 py-6 px-6 shadow-inner">
           <nav className="flex flex-col space-y-4">
             {navLinks.map((link) => (
               <a

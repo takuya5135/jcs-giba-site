@@ -6,7 +6,9 @@
     "services": "SERVICES",
     "whyUs": "WHY US",
     "flow": "FLOW",
-    "contact": "CONTACT"
+    "contact": "CONTACT",
+    "business": "BUSINESS",
+    "tsushin": "GIBA TSUSHIN"
   },
   "hero": {
     "tag": "Welcome to JCS Giba",
@@ -206,6 +208,49 @@
       "estVal": "August 2026",
       "loc": "Location",
       "locVal": "Room 2, 11th Floor, Osaka Ekimae No.3 Building,\n1-1-3 Umeda, Kita-ku, Osaka, 530-0001, Japan"
-    }
+    },
+    "pagesTitle": "Business & Newsletter"
+  },
+  "pillars": {
+    "tag": "BUSINESS",
+    "title": "When You Need Help, Start with JCS Giba",
+    "desc": "Three businesses that answer the everyday problems of food and distribution.",
+    "more": "Learn more (Japanese)",
+    "items": [
+      {
+        "title": "Expanding Sales Channels and Suppliers",
+        "desc": "We help companies short of sales staff to expand their sales channels, and companies looking to strengthen procurement to expand their supplier base.",
+        "href": "#services",
+        "icon": "/images/tsushin/icon-jcs.jpg",
+        "main": true
+      },
+      {
+        "title": "Buying Surplus Frozen Food Inventory",
+        "desc": "We buy surplus stock, near-expiry items, B-grade products and trimmings in bulk, and pass them to food-service channels without disturbing market prices.",
+        "href": "/ja/kaitori",
+        "icon": "/images/tsushin/icon-kaitori.jpg"
+      },
+      {
+        "title": "Support for Hiring Foreign Workers",
+        "desc": "Specified Skilled Worker and the new Employment for Skill Development system starting 2027. Crescent Cooperative (tentative) preparatory office.",
+        "href": "/ja/crescent",
+        "icon": "/images/tsushin/icon-jinzai.jpg"
+      }
+    ],
+    "mainLabel": "Main business"
+  },
+  "tsushin": {
+    "tag": "GIBA TSUSHIN",
+    "title": "Giba Tsushin Newsletter",
+    "desc": "Around the 16th of every month, we send our business partners a Japanese-language newsletter on meat and food prices and logistics, together with stories from the field.",
+    "points": [
+      "Feature: one topic per issue",
+      "Fixed-point data: 20 indicators with month-on-month and year-on-year changes",
+      "Import suspensions and lifts"
+    ],
+    "btnSubscribe": "Subscribe",
+    "btnBack": "Back issues (Japanese)",
+    "subject": "[Giba Tsushin subscription]",
+    "body": "Company:\nName:\nEmail address:\n"
   }
 }
