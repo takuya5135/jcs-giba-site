@@ -56,10 +56,6 @@ export default function Content() {
           <P>
             アルコール度数も5度ですので、たいへん飲みやすく、「ホットワインではアルコール度数が高すぎる」という、あまりお酒が得意ではない方へもオススメできる一杯でした。それにしても、昼飲みというのは気分が良いですね！
           </P>
-          <figure className="my-6 max-w-[260px]">
-            <img src="/images/tsushin/2026-12-hotbeer.jpg" alt="ホットビールを試飲する畑" className="w-full rounded-xl" />
-            <figcaption className="mt-2 text-xs text-slate-500">伊丹でホットビールを試飲</figcaption>
-          </figure>
           <P>
             ご参考までにリンクを掲載しておきます。ご興味のある方はチェックしてみてください。
             <br />
@@ -67,6 +63,10 @@ export default function Content() {
               https://www.seiwa-ic.co.jp/hotbeer/
             </a>
           </P>
+          <figure className="my-6 max-w-[260px]">
+            <img src="/images/tsushin/2026-12-hotbeer.jpg" alt="ホットビールを試飲する畑" className="w-full rounded-xl" />
+            <figcaption className="mt-2 text-xs text-slate-500">伊丹でホットビールを試飲</figcaption>
+          </figure>
         </div>
       </section>
 
