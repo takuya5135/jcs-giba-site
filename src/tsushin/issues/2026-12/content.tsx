@@ -2,7 +2,7 @@
 import LineChart from '@/components/tsushin/LineChart';
 import TeitenTable from '@/components/tsushin/TeitenTable';
 import TeishiTable, { TeishiRow } from '@/components/tsushin/TeishiTable';
-import { Card, H3, P, Part, Todo } from '@/components/tsushin/parts';
+import { Card, H3, P, Part } from '@/components/tsushin/parts';
 import { ChickenRow, JarwRow, TeitenRow, chickenKpi, jarwSeason, jarwStock, pct1, signed, ym, yen } from '@/tsushin/calc';
 import chickenData from './chicken.json';
 import jarwData from './jarw.json';
@@ -193,7 +193,24 @@ export default function Content() {
         <img src="/images/tsushin/hata.png" alt="畑 拓也" width={88} height={88} className="mt-3 h-[88px] w-[88px] shrink-0 rounded-full" />
         <div>
           <P>
-            <Todo>最近食べた・飲んだもの、行った場所、商談で聞いた話を、2〜3行で</Todo>
+            中学校からの友人が、設備機器を製造しているメーカーを経営しています。新規事業で「ホットビールサーバー」というものを開発し、特許を取得したそうです。先日、伊丹の花火大会の日にイベント出店していたので、試飲しに行ってきました。
+          </P>
+          <P>
+            この日はチェリー＆ベリーとレモンの2種類が販売されていましたが、両方いただきました。温めることでフルーツの濃厚な香りが引き立ち、心も体も温まり、癒される感覚がありました。甘さがあるのですがベタつきはなく、大人向けの贅沢な味わいでした。
+          </P>
+          <P>
+            アルコール度数も5度ですので、たいへん飲みやすく、「ホットワインではアルコール度数が高すぎる」という、あまりお酒が得意ではない方へもオススメできる一杯でした。それにしても、昼飲みというのは気分が良いですね！
+          </P>
+          <figure className="my-6 max-w-[260px]">
+            <img src="/images/tsushin/2026-12-hotbeer.jpg" alt="ホットビールを試飲する畑" className="w-full rounded-xl" />
+            <figcaption className="mt-2 text-xs text-slate-500">伊丹でホットビールを試飲</figcaption>
+          </figure>
+          <P>
+            ご参考までにリンクを掲載しておきます。ご興味のある方はチェックしてみてください。
+            <br />
+            <a href="https://www.seiwa-ic.co.jp/hotbeer/" target="_blank" rel="noopener noreferrer" className="break-all text-[#0B2046] underline">
+              https://www.seiwa-ic.co.jp/hotbeer/
+            </a>
           </P>
         </div>
       </section>
