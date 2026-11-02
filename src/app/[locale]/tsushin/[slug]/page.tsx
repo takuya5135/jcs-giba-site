@@ -17,7 +17,7 @@ export function generateMetadata({ params }: Props): Metadata {
   const issue = getIssue(params.slug);
   if (!issue) return {};
   return {
-    title: `ギバ通信 第${issue.no}号「${issue.title}」 | 合同会社JCSギバ`,
+    title: `ギバ通信 ${issue.label ?? `第${issue.no}号`}「${issue.title}」 | 合同会社JCSギバ`,
     description: issue.dek,
     // 最新号は検索に載せない（次号の配信後に公開）
     robots: issue.public ? undefined : { index: false, follow: false },
@@ -39,7 +39,7 @@ export default function IssuePage({ params }: Props) {
         <p className="text-xs font-bold tracking-[0.25em] text-slate-500">GIBA TSUSHIN</p>
         <h1 className="mt-2 text-3xl font-bold text-[#0B2046]">ギバ通信</h1>
         <p className="mt-2 text-sm text-slate-500">
-          第{issue.no}号 ｜ {jaDate(issue.date)} ｜ 畑 拓也
+          {issue.label ?? `第${issue.no}号`} ｜ {jaDate(issue.date)} ｜ 畑 拓也
         </p>
         <Body />
         <TsushinFooter locale={params.locale} sources={sources} />

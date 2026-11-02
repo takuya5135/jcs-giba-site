@@ -36,7 +36,7 @@ export default function TsushinIndex({ params }: Props) {
               <li key={i.slug}>
                 <Link href={`/${params.locale}/tsushin/${i.slug}`} className="block rounded-xl border border-slate-200 bg-white p-5 hover:border-[#F09A26]">
                   <p className="text-xs text-slate-500">
-                    第{i.no}号 ｜ {jaDate(i.date)}
+                    {i.label ?? `第${i.no}号`} ｜ {jaDate(i.date)}
                   </p>
                   <p className="mt-1 font-bold text-[#0B2046]">{i.title}</p>
                   <p className="mt-1 text-sm text-slate-600">{i.dek}</p>
