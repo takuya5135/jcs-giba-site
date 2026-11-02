@@ -183,7 +183,7 @@ export default function Content() {
           農林水産省 動物検疫所の通知（2026年8月25日〜10月30日）から。日付は通知の日です。
         </p>
         <p className="mb-2 text-sm font-bold text-[#0B2046]">
-          畜肉 <span className="ml-2 text-xs font-normal text-slate-500">停止 {teishiCount('畜肉', '停止')}件・解除 {teishiCount('畜肉', '解除')}件。すべて鳥インフルエンザによる家きん肉等の措置です。</span>
+          畜肉 <span className="ml-2 text-xs font-normal text-slate-500">停止 {teishiCount('畜肉', '停止')}件・解除 {teishiCount('畜肉', '解除')}件。「家きん肉等」は、鶏・あひる・七面鳥など家きんの肉やその製品のことです。</span>
         </p>
         <TeishiTable rows={teishi.filter((r) => r.分類 === '畜肉')} />
       </section>

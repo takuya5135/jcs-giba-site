@@ -7,12 +7,14 @@ export default function TeishiTable({ rows }: { rows: TeishiRow[] }) {
   const sorted = [...rows].sort((a, b) => (a.日付 < b.日付 ? 1 : -1));
   return (
     <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white">
-      <table className="w-full min-w-[560px] text-sm">
+      <table className="w-full min-w-[680px] text-sm">
         <thead>
           <tr className="border-b border-slate-200 text-xs text-slate-500">
             <th className="px-3 py-2 text-left font-medium">日付</th>
             <th className="px-3 py-2 text-left font-medium">国</th>
             <th className="px-3 py-2 text-left font-medium">措置</th>
+            <th className="px-3 py-2 text-left font-medium">品目</th>
+            <th className="px-3 py-2 text-left font-medium">理由</th>
             <th className="px-3 py-2 text-left font-medium">対象地域</th>
           </tr>
         </thead>
@@ -30,6 +32,12 @@ export default function TeishiTable({ rows }: { rows: TeishiRow[] }) {
                   {r.区分}
                 </span>
               </td>
+              <td className="px-3 py-2 text-xs leading-relaxed text-slate-700 whitespace-nowrap">
+                {r.品目.split('、').map((x) => (
+                  <div key={x}>{x}</div>
+                ))}
+              </td>
+              <td className="px-3 py-2 text-xs leading-relaxed text-slate-700 whitespace-nowrap">{r.理由}</td>
               <td className="px-3 py-2 text-xs leading-relaxed text-slate-600">{r.地域}</td>
             </tr>
           ))}
