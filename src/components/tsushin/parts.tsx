@@ -78,13 +78,15 @@ export function TsushinFooter({ locale, sources }: { locale: string; sources: st
             </div>
           );
           return href ? (
-            <Link
+            <a
               key={t}
               href={`/${locale}${href}`}
+              target="_blank"
+              rel="noopener"
               className={`block rounded-lg bg-white border border-slate-200 p-4 hover:border-[#F09A26] ${wide ? 'sm:col-span-2' : ''}`}
             >
               {inner}
-            </Link>
+            </a>
           ) : (
             <div key={t} className="rounded-lg bg-white border border-slate-200 p-4">
               {inner}
