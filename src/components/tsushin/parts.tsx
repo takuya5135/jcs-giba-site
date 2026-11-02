@@ -47,11 +47,15 @@ export function TsushinHeader({ locale }: { locale: string }) {
 }
 
 // href があるものは詳しいページへリンクする
-const MENU: { t: string; d: string; href?: string }[] = [
+const MENU: { t: string; d: string; href?: string; wide?: boolean }[] = [
   { t: 'お悩み在庫の買い取り', d: '冷凍食品の過剰在庫・期限の近い品・B級品・端材を、価格を崩さず業務筋へ', href: '/kaitori' },
-  { t: '調達と販路の仲介', d: '海外・国内メーカーと流通をつなぐ。輸入停止時の代替調達も' },
   { t: '外国人材の受け入れ支援', d: '特定技能・育成就労、2027年の制度改正への備え' },
-  { t: '日本市場のコンサルティング', d: '海外メーカーの日本参入、商品開発と販売戦略' },
+  {
+    t: '調達・販路の仲介とコンサルティング',
+    d: '海外・国内メーカーと流通をつなぐ。輸入停止時の代替調達、海外メーカーの日本参入、商品開発と販売戦略も',
+    href: '#services',
+    wide: true,
+  },
 ];
 
 export function TsushinFooter({ locale, sources }: { locale: string; sources: string[] }) {
@@ -59,7 +63,7 @@ export function TsushinFooter({ locale, sources }: { locale: string; sources: st
     <footer className="mt-16 border-t border-slate-200 pt-8">
       <p className="font-bold text-[#0B2046]">こんな時は、まずJCSギバへ</p>
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
-        {MENU.map(({ t, d, href }) => {
+        {MENU.map(({ t, d, href, wide }) => {
           const inner = (
             <>
               <p className="font-bold text-sm text-[#0B2046]">
@@ -70,7 +74,11 @@ export function TsushinFooter({ locale, sources }: { locale: string; sources: st
             </>
           );
           return href ? (
-            <Link key={t} href={`/${locale}${href}`} className="block rounded-lg bg-white border border-slate-200 p-4 hover:border-[#F09A26]">
+            <Link
+              key={t}
+              href={`/${locale}${href}`}
+              className={`block rounded-lg bg-white border border-slate-200 p-4 hover:border-[#F09A26] ${wide ? 'sm:col-span-2' : ''}`}
+            >
               {inner}
             </Link>
           ) : (
