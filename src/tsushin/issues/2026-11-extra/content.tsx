@@ -98,40 +98,43 @@ function FillChart() {
   );
 }
 
-// ③ ワーク・エンゲージメントの下がり方（来日時を0として）
+// ③ ワーク・エンゲージメントの推移（0〜6点）：調査時平均4.36から年−0.4、日本人平均約2.9
 function EngageChart() {
   const W = 600;
-  const H = 280;
+  const H = 300;
   const L = 64;
-  const R = 20;
-  const T = 40;
+  const R = 24;
+  const T = 30;
   const Bm = 48;
+  const START = 4.36;
+  const JP = 2.9;
   const x = (yr: number) => L + (yr / 5) * (W - L - R);
-  const y = (d: number) => T + (-d / 2.2) * (H - T - Bm);
-  const pts = [0, 1, 2, 3, 4, 5].map((yr) => [x(yr), y(-0.4 * yr)]);
+  const y = (v: number) => T + ((5 - v) / 3) * (H - T - Bm); // 縦軸 2〜5点
+  const pts = [0, 1, 2, 3, 4, 5].map((yr) => [x(yr), y(START - 0.4 * yr)]);
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full" role="img" aria-label="ワーク・エンゲージメントは1年に約0.4ポイントずつ下がり、4〜5年で日本人並みになる">
-      {[0, -1.0, -2.0].map((d) => (
-        <g key={d}>
-          <line x1={L} x2={W - R} y1={y(d)} y2={y(d)} stroke="#E2E8F0" />
-          <text x={L - 8} y={y(d) + 4} fontSize="20" textAnchor="end" fill="#64748B">
-            {d === 0 ? '0' : d.toFixed(1)}
+    <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full" role="img" aria-label="調査時の平均4.36点から1年に約0.4ポイントずつ下がると、4年ほどで日本人の平均約2.9点に並ぶ">
+      {[2, 3, 4, 5].map((v) => (
+        <g key={v}>
+          <line x1={L} x2={W - R} y1={y(v)} y2={y(v)} stroke="#E2E8F0" />
+          <text x={L - 10} y={y(v) + 7} fontSize="20" textAnchor="end" fill="#64748B">
+            {v}
           </text>
         </g>
       ))}
-      <rect x={x(4)} y={T} width={x(5) - x(4)} height={H - T - Bm + 6} fill="#FFF4E5" />
-      <text x={(x(4) + x(5)) / 2} y={T - 14} fontSize="20" textAnchor="middle" fill={ORANGE} fontWeight="bold">
-        日本人並みに
+      <line x1={L} x2={W - R} y1={y(JP)} y2={y(JP)} stroke="#DC2626" strokeWidth="2.5" strokeDasharray="8 6" />
+      <text x={L + 8} y={y(JP) + 26} fontSize="20" fill="#DC2626" fontWeight="bold">
+        日本人の平均 約2.9
       </text>
       <polyline points={pts.map((p) => p.join(',')).join(' ')} fill="none" stroke={NAVY} strokeWidth="3" />
       {pts.map(([px, py], i) => (
-        <circle key={i} cx={px} cy={py} r={i === 1 || i === 3 ? 5 : 3.5} fill={i === 1 || i === 3 ? ORANGE : NAVY} />
+        <circle key={i} cx={px} cy={py} r={i === 0 ? 6 : 4} fill={i === 0 ? ORANGE : NAVY} />
       ))}
-      <text x={x(1) + 8} y={y(-0.4) - 8} fontSize="20" fill={NAVY}>1年目 −0.4</text>
-      <text x={x(3) + 8} y={y(-1.2) - 8} fontSize="20" fill={NAVY}>3年目 −1.2</text>
+      <text x={x(0) + 12} y={y(START) - 10} fontSize="20" fill={NAVY} fontWeight="bold">
+        調査時の平均 4.36
+      </text>
       {[0, 1, 2, 3, 4, 5].map((yr) => (
         <text key={yr} x={x(yr)} y={H - Bm + 30} fontSize="20" textAnchor="middle" fill="#64748B">
-          {yr === 0 ? '来日' : `${yr}年`}
+          {yr === 0 ? '調査時' : `${yr}年後`}
         </text>
       ))}
     </svg>
@@ -252,9 +255,9 @@ export default function Content() {
 
         <H3>来日したてが、いちばん熱い</H3>
         <P>
-          武蔵大学の神林龍教授が、技能実習生・特定技能の人を同じ人で追いかけた調査（398人）があります。仕事への「活力・熱意・没頭」を測るワーク・エンゲージメントは、<B>来日したてがいちばん高く、日本人よりずっと高い</B>。ちなみに日本人の平均は0〜6点の尺度で約2.9点。各国と比べると、16か国の中で一番低い水準です。ところが、平均すると<B>1年に約0.4ポイントずつ下がり、4〜5年で日本人並み</B>になってしまうそうです。
+          武蔵大学の神林龍教授が、技能実習生・特定技能の人を同じ人で追いかけた調査（398人）があります。仕事への「活力・熱意・没頭」を測るワーク・エンゲージメントは、<B>日本人よりずっと高い</B>。0〜6点の尺度で、技能実習生・特定技能生の平均は4.36点。日本人の平均は約2.9点で、各国と比べても一番低い水準です。しかも技能実習1号のほうが2号・3号や特定技能より高く、<B>来日したてがいちばん熱い</B>ようです。ところが、平均すると<B>1年に約0.4ポイントずつ下がり、4〜5年で日本人並み</B>になってしまうそうです。
         </P>
-        <Card title="ワーク・エンゲージメントの下がり方" note="来日時を0とした目安（0〜6点の尺度）。神林教授の分析（年−0.4ポイント）をもとに作図。上がる人もいれば、下がる人もいます。日本人の平均は約2.9点（国際比較で最も低い水準）。">
+        <Card title="ワーク・エンゲージメントの下がり方（0〜6点）" note="技能実習生・特定技能生の第1回調査（2024年2〜3月）の平均4.36点から、神林教授の分析（1年に約0.4ポイント低下）で延ばした目安。上がる人もいれば、下がる人もいます。日本人の平均は約2.9点（島津明人 2016、国際比較で最も低い水準）。">
           <EngageChart />
         </Card>
         <P>下がった人には、共通する理由がありました。</P>
