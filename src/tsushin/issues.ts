@@ -10,6 +10,7 @@ export type Issue = {
   title: string; // 今号の一本
   dek: string; // 一覧に出す一文
   public: boolean;
+  zh?: { label?: string; title: string; dek: string }; // 中国語版がある号だけ
 };
 
 export const ISSUES: Issue[] = [
@@ -30,6 +31,11 @@ export const ISSUES: Issue[] = [
     title: '相場の天井は、倉庫が決めるかも？',
     dek: '2025年から2026年のチキンの値動きを追うと、冷蔵倉庫の「キャパシティ」というもうひとつの主役が見えてきます。',
     public: false,
+    zh: {
+      label: '试刊号（11月号）',
+      title: '行情的天花板，也许是由仓库决定的？',
+      dek: '追踪2025年到2026年的鸡肉价格走势，会发现另一个主角——冷库的“容量”。',
+    },
   },
 ];
 
