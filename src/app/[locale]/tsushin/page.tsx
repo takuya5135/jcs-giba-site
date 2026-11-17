@@ -26,10 +26,16 @@ const TEXT = {
     empty: '本刊于2026年12月创刊。往期内容将在下一期发送后刊登。',
     ask: ['如希望订阅，请联系 ', '。'],
   },
+  en: {
+    h1: 'Giba Tsushin Back Issues',
+    lead: 'Sent around the 16th of every month to our business partners and Giba friends. The latest issue is delivered by email and posted here after the next issue goes out.',
+    empty: 'Launched in December 2026. Back issues will be posted after the next issue is sent.',
+    ask: ['To subscribe, please contact ', '.'],
+  },
 };
 
 export function generateStaticParams() {
-  return [{ locale: 'ja' }, { locale: 'zh' }];
+  return [{ locale: 'ja' }, { locale: 'zh' }, { locale: 'en' }];
 }
 
 export default function TsushinIndex({ params }: Props) {
@@ -37,7 +43,8 @@ export default function TsushinIndex({ params }: Props) {
   const lang = params.locale;
   const u = UI[lang];
   const tx = TEXT[lang];
-  const list = ISSUES.filter((i) => i.public && (lang === 'ja' || i.zh));
+  const tr = (i: (typeof ISSUES)[number]) => (lang === 'ja' ? undefined : i[lang]);
+  const list = ISSUES.filter((i) => i.public && (lang === 'ja' || tr(i)));
 
   return (
     <div className="min-h-screen bg-[#F8FAFC]">
@@ -57,10 +64,10 @@ export default function TsushinIndex({ params }: Props) {
               <li key={i.slug}>
                 <Link href={`/${params.locale}/tsushin/${i.slug}`} className="block rounded-xl border border-slate-200 bg-white p-5 hover:border-[#F09A26]">
                   <p className="text-xs text-slate-500">
-                    {(lang === 'zh' ? i.zh?.label : i.label) ?? u.no(i.no)} ｜ {u.month(i.date)}
+                    {(lang === 'ja' ? i.label : tr(i)?.label) ?? u.no(i.no)} ｜ {u.month(i.date)}
                   </p>
-                  <p className="mt-1 font-bold text-[#0B2046]">{lang === 'zh' ? i.zh?.title : i.title}</p>
-                  <p className="mt-1 text-sm text-slate-600">{lang === 'zh' ? i.zh?.dek : i.dek}</p>
+                  <p className="mt-1 font-bold text-[#0B2046]">{tr(i)?.title ?? i.title}</p>
+                  <p className="mt-1 text-sm text-slate-600">{tr(i)?.dek ?? i.dek}</p>
                 </Link>
               </li>
             ))}

@@ -27,6 +27,9 @@ export type TeitenRow = {
 };
 
 export const ym = (m: string) => `${m.slice(0, 4)}年${Number(m.slice(5, 7))}月`;
+const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+// 英語版の年月：「Sep 2026」
+export const ymEn = (m: string) => `${MON[Number(m.slice(5, 7)) - 1]} ${m.slice(0, 4)}`;
 export const yen = (v: number) => `${Math.round(v).toLocaleString('ja-JP')}円`;
 export const pct1 = (v: number) => `${v.toFixed(1)}%`;
 export const signed = (v: number, digits: number, unit: string) =>

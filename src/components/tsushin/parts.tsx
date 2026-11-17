@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { CONTACT_EMAIL } from '@/lib/contact';
-import { Lang, UI } from '@/tsushin/i18n';
+import { Lang, UI, isLang } from '@/tsushin/i18n';
 
 // 畑さんが書き込む場所の目印。仕上がったら中身を本文に置き換える。
 export const Todo = ({ children }: { children: React.ReactNode }) => (
@@ -32,7 +32,7 @@ export const Card = ({ title, note, children }: { title: string; note?: string; 
 );
 
 export function TsushinHeader({ locale }: { locale: string }) {
-  const u = UI[locale === 'zh' ? 'zh' : 'ja'];
+  const u = UI[isLang(locale) ? locale : 'ja'];
   return (
     <header className="border-b border-slate-200 bg-white">
       <div className="h-1.5 w-full bg-[#F09A26]" />
@@ -56,7 +56,7 @@ const MENU: { href?: string; icon: string; wide?: boolean }[] = [
 ];
 
 export function TsushinFooter({ locale, sources }: { locale: string; sources: string[] }) {
-  const lang: Lang = locale === 'zh' ? 'zh' : 'ja';
+  const lang: Lang = isLang(locale) ? locale : 'ja';
   const u = UI[lang];
   return (
     <footer className="mt-16 border-t border-slate-200 pt-8">
@@ -76,7 +76,7 @@ export function TsushinFooter({ locale, sources }: { locale: string; sources: st
                 </p>
                 <p className="mt-1 text-xs leading-relaxed text-slate-600">
                   {d}
-                  {lang === 'zh' && href?.startsWith('/') && <span className="text-slate-400">{u.footer.jaOnly}</span>}
+                  {lang !== 'ja' && href?.startsWith('/') && <span className="text-slate-400">{u.footer.jaOnly}</span>}
                 </p>
               </div>
             </div>

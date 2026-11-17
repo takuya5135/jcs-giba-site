@@ -1,4 +1,4 @@
-import { TeitenRow, teitenChange, signed, ym } from '@/tsushin/calc';
+import { TeitenRow, teitenChange, signed, ym, ymEn } from '@/tsushin/calc';
 import { Lang } from '@/tsushin/i18n';
 
 // 中国語表示用の訳（項目名・分類・単位）
@@ -33,9 +33,41 @@ const ZH: Record<string, string> = {
   トン: '吨',
   '2020年=100': '2020年=100',
 };
+const EN: Record<string, string> = {
+  '為替・物流・飼料': 'FX, logistics & feed',
+  '円/ドル': 'JPY per USD',
+  '冷蔵倉庫の庫腹占有率': 'Cold storage occupancy',
+  '輸入の海上運賃（指数）': 'Import ocean freight (index)',
+  'とうもろこし（国際価格）': 'Corn (world price)',
+  '大豆ミール（国際価格）': 'Soybean meal (world price)',
+  鶏肉: 'Chicken',
+  '輸入：ブラジル産': 'Import: Brazil',
+  '輸入：タイ産': 'Import: Thailand',
+  '国産：もも（卸・東京）': 'Japan: thigh (wholesale, Tokyo)',
+  '国産：むね（卸・東京）': 'Japan: breast (wholesale, Tokyo)',
+  鶏肉調製品: 'Processed chicken',
+  '輸入：タイ産（単価）': 'Import: Thailand (unit price)',
+  '輸入：タイ産（数量）': 'Import: Thailand (volume)',
+  '輸入：中国産（単価）': 'Import: China (unit price)',
+  '輸入：中国産（数量）': 'Import: China (volume)',
+  牛肉: 'Beef',
+  '輸入：豪州産・冷凍': 'Import: Australia, frozen',
+  '輸入：米国産・冷蔵': 'Import: USA, chilled',
+  '国産：和牛去勢A4（枝肉・東京）': 'Japan: Wagyu steer A4 (carcass, Tokyo)',
+  '国産：乳・交雑去勢B3・B2（枝肉・東京）': 'Japan: dairy/cross steer B3/B2 (carcass, Tokyo)',
+  豚肉: 'Pork',
+  '輸入：デンマーク産・冷凍': 'Import: Denmark, frozen',
+  '国産：枝肉 上（東京）': 'Japan: carcass, upper grade (Tokyo)',
+  円: 'JPY',
+  '円/トン': 'JPY/t',
+  '円/kg': 'JPY/kg',
+  トン: 't',
+  '2020年=100': '2020=100',
+};
 const HEAD = {
   ja: ['項目', '最新', '単位', '月', '前月比', '前年比'],
   zh: ['项目', '最新', '单位', '月份', '环比', '同比'],
+  en: ['Item', 'Latest', 'Unit', 'Month', 'MoM', 'YoY'],
 };
 
 const Chg = ({ v, isPct }: { v: number | null; isPct: boolean }) => {
@@ -50,7 +82,7 @@ const fmtVal = (r: TeitenRow) =>
     : Math.round(r.値).toLocaleString('ja-JP');
 
 export default function TeitenTable({ rows, lang = 'ja' }: { rows: TeitenRow[]; lang?: Lang }) {
-  const t = (v: string) => (lang === 'zh' ? ZH[v] ?? v : v);
+  const t = (v: string) => (lang === 'zh' ? ZH[v] ?? v : lang === 'en' ? EN[v] ?? v : v);
   const h = HEAD[lang];
   const groups: string[] = [];
   rows.forEach((r) => !groups.includes(r.分類) && groups.push(r.分類));
@@ -83,7 +115,7 @@ export default function TeitenTable({ rows, lang = 'ja' }: { rows: TeitenRow[]; 
                     <td className="px-3 py-2 text-slate-700">{t(r.項目)}</td>
                     <td className="px-3 py-2 text-right font-semibold tabular-nums text-[#0B2046]">{fmtVal(r)}</td>
                     <td className="px-3 py-2 text-xs text-slate-500">{t(r.単位)}</td>
-                    <td className="px-3 py-2 text-xs text-slate-500 whitespace-nowrap">{ym(r.月)}</td>
+                    <td className="px-3 py-2 text-xs text-slate-500 whitespace-nowrap">{lang === 'en' ? ymEn(r.月) : ym(r.月)}</td>
                     <td className="px-3 py-2 text-right tabular-nums">
                       <Chg v={c.mom} isPct={c.isPct} />
                     </td>

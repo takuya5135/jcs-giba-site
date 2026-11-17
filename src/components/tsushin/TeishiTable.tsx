@@ -1,8 +1,12 @@
 // 輸入停止・解除の動き（日付の新しい順）
 import { Lang } from '@/tsushin/i18n';
-// 中国語版は国・品目・地域・理由を訳したJSON（teishi.zh.json）を渡す。区分は '停止'/'解除' のまま
-const HEAD = { ja: ['日付', '国', '措置', '品目', '理由', '対象地域'], zh: ['日期', '国家', '措施', '品类', '原因', '对象地区'] };
-const KUBUN = { ja: { 停止: '停止', 解除: '解除' }, zh: { 停止: '暂停', 解除: '解除' } };
+// 中国語版・英語版は国・品目・地域・理由を訳したJSON（teishi.zh.json / teishi.en.json）を渡す。区分は '停止'/'解除' のまま
+const HEAD = {
+  ja: ['日付', '国', '措置', '品目', '理由', '対象地域'],
+  zh: ['日期', '国家', '措施', '品类', '原因', '对象地区'],
+  en: ['Date', 'Country', 'Action', 'Products', 'Reason', 'Area'],
+};
+const KUBUN = { ja: { 停止: '停止', 解除: '解除' }, zh: { 停止: '暂停', 解除: '解除' }, en: { 停止: 'Suspended', 解除: 'Lifted' } };
 export type TeishiRow = { 分類: string; 日付: string; 国: string; 区分: '停止' | '解除'; 品目: string; 地域: string; 理由: string };
 
 const md = (d: string) => `${Number(d.slice(5, 7))}/${Number(d.slice(8, 10))}`;

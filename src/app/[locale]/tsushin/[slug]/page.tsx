@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ISSUES, getIssue } from '@/tsushin/issues';
 import { CONTENTS } from '@/tsushin/contents';
-import { Lang, UI, isLang } from '@/tsushin/i18n';
+import { LANGS, LANG_LINK, Lang, UI, isLang } from '@/tsushin/i18n';
 import { TsushinFooter, TsushinHeader } from '@/components/tsushin/parts';
 
 type Props = { params: { locale: string; slug: string } };
@@ -22,8 +22,9 @@ function head(slug: string, lang: Lang) {
   const issue = getIssue(slug);
   if (!issue) return null;
   const u = UI[lang];
-  const t = lang === 'zh' && issue.zh ? issue.zh : issue;
-  const label = t.label ?? (lang === 'zh' ? issue.label : undefined) ?? u.no(issue.no);
+  const tr = lang === 'ja' ? undefined : issue[lang];
+  const t = tr ?? issue;
+  const label = t.label ?? (lang !== 'ja' ? issue.label : undefined) ?? u.no(issue.no);
   return { issue, label, title: t.title, dek: t.dek };
 }
 
@@ -48,19 +49,23 @@ export default function IssuePage({ params }: Props) {
   if (!h || !content) notFound();
   const { Body, sources } = content;
   const u = UI[lang];
-  const other = u.switchTo;
-  const hasOther = !!CONTENTS[params.slug]?.[other.lang];
+  // この号がある他の言語へのリンク
+  const others = LANGS.filter((l) => l !== lang && !!CONTENTS[params.slug]?.[l]);
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC]" lang={lang === 'zh' ? 'zh-CN' : 'ja'}>
+    <div className="min-h-screen bg-[#F8FAFC]" lang={lang === 'zh' ? 'zh-CN' : lang}>
       <TsushinHeader locale={lang} />
       <main className="mx-auto max-w-3xl px-4 pb-20 pt-10">
         <div className="flex items-start justify-between gap-4">
           <p className="text-xs font-bold tracking-[0.25em] text-slate-500">GIBA TSUSHIN</p>
-          {hasOther && (
-            <Link href={`/${other.lang}/tsushin/${params.slug}`} className="shrink-0 rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-600 hover:border-[#F09A26]">
-              {other.label}
-            </Link>
+          {others.length > 0 && (
+            <div className="flex shrink-0 gap-2">
+              {others.map((l) => (
+                <Link key={l} href={`/${l}/tsushin/${params.slug}`} className="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-600 hover:border-[#F09A26]">
+                  {LANG_LINK[l]}
+                </Link>
+              ))}
+            </div>
           )}
         </div>
         <h1 className="mt-2 text-3xl font-bold text-[#0B2046]">{u.name}</h1>

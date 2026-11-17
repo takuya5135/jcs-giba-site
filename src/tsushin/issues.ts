@@ -11,6 +11,7 @@ export type Issue = {
   dek: string; // 一覧に出す一文
   public: boolean;
   zh?: { label?: string; title: string; dek: string }; // 中国語版がある号だけ
+  en?: { label?: string; title: string; dek: string }; // 英語版がある号だけ
 };
 
 export const ISSUES: Issue[] = [
@@ -35,6 +36,11 @@ export const ISSUES: Issue[] = [
       label: '试刊号（11月号）',
       title: '行情的天花板，也许是由仓库决定的？',
       dek: '追踪2025年到2026年的鸡肉价格走势，会发现另一个主角——冷库的“容量”。',
+    },
+    en: {
+      label: 'Trial issue (November)',
+      title: 'Could warehouses be setting the price ceiling?',
+      dek: 'Follow chicken prices from 2025 to 2026 and another key player comes into view: cold storage capacity.',
     },
   },
 ];
