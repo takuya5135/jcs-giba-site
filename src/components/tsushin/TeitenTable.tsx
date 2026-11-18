@@ -27,6 +27,11 @@ const ZH: Record<string, string> = {
   豚肉: '猪肉',
   '輸入：デンマーク産・冷凍': '进口：丹麦产・冷冻',
   '国産：枝肉 上（東京）': '日本产：胴体 上等（东京）',
+  '消費（川下）': '消费（下游）',
+  'スーパー：惣菜（既存店売上）': '超市：熟食（既有门店销售额）',
+  '家計：調理食品（1世帯の月支出）': '家庭：调理食品（每户月支出）',
+  '家計：冷凍調理食品（1世帯の月支出）': '家庭：冷冻调理食品（每户月支出）',
+  '前年比%': '同比%',
   円: '日元',
   '円/トン': '日元/吨',
   '円/kg': '日元/kg',
@@ -58,6 +63,11 @@ const EN: Record<string, string> = {
   豚肉: 'Pork',
   '輸入：デンマーク産・冷凍': 'Import: Denmark, frozen',
   '国産：枝肉 上（東京）': 'Japan: carcass, upper grade (Tokyo)',
+  '消費（川下）': 'Consumption (downstream)',
+  'スーパー：惣菜（既存店売上）': 'Supermarkets: deli (same-store sales)',
+  '家計：調理食品（1世帯の月支出）': 'Households: prepared foods (monthly spend)',
+  '家計：冷凍調理食品（1世帯の月支出）': 'Households: frozen prepared foods (monthly spend)',
+  '前年比%': 'YoY %',
   円: 'JPY',
   '円/トン': 'JPY/t',
   '円/kg': 'JPY/kg',
@@ -77,7 +87,9 @@ const Chg = ({ v, isPct }: { v: number | null; isPct: boolean }) => {
 };
 
 const fmtVal = (r: TeitenRow) =>
-  r.単位 === '%' || r.値 < 1000
+  r.単位 === '前年比%'
+    ? signed(r.値, 1, '%')
+    : r.単位 === '%' || r.値 < 1000
     ? r.値.toLocaleString('ja-JP', { maximumFractionDigits: 1 })
     : Math.round(r.値).toLocaleString('ja-JP');
 

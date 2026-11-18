@@ -79,6 +79,8 @@ export function jarwStock(rows: JarwRow[], prev: string, cur: string) {
 
 // 定点観測の前月比・前年比。占有率（%）はポイント差、それ以外は変化率。
 export function teitenChange(r: TeitenRow) {
+  // 「前年比%」の項目（スーパーの既存店売上など）は値そのものが前年比なので、前月比・前年比は出さない
+  if (r.単位 === '前年比%') return { isPct: true, mom: null, yoy: null };
   const isPct = r.単位 === '%';
   const chg = (base: number | null) => {
     if (base == null || base === 0) return null;
